@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta name="description" content="Documental Web del Parque Marino de Puntarenas">
+	<meta name="Keywords" content="web, documental, marino, parque marino, Puntarenas, Costa Rica, Costa, Rica" />
+	<meta name="Robots" content="all"/>
+	<meta name="distribution" content="global"/>
+	<title>Parque Marino | Puntarenas</title>
+	
+	<link rel = "stylesheet" type="text/css" href = "css/normalize.css">
+	<link rel = "stylesheet" type="text/css" href = "css/styles.css">
+	<link rel = "stylesheet" type="text/css" href = "css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+				<nav class="navbar-fixed-top menuMovil">
+				<div class="menu_bar">
+					<div class="bt-menu"><span class="glyphicon glyphicon-menu-hamburger btn_movil"></span></div>
+				</div>
+				<nav class="menuSimple menuFijo menu">
+					<ul>
+						<li><a href="" class="page-scroll liMenu" title="Información">Información</a></li>
+						<li><a href="" class="page-scroll liMenu" title="Rescate Animal">Rescate Animal</a></li>
+						<li><a href="" class="page-scroll liMenu" title="Inicio">Inicio</a></li>
+					</ul>
+				</nav>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<section class="inicio">
+			<div class="principal">
+				
+				<div class="videoIntro">
+		            <video src="video/BG.webm" autoplay loop=true;></video>
+				</div>
+				<div class="row">
+					
+					<button class="btnIniciar">HISTORIA de ROMELIA</button>
+
+				</div>
+			</div>
+
+
+			<section id="banner">
+			<div class="slider fullscreen">
+			    <ul class="slides">
+			      <li class="selSlide">
+			        <img src="img/romelia.jpg" alt="slide1"> 
+			        <div class="caption center-align">
+			          <h1>Romelia</h1>
+			          
+			        </div>
+			      </li>
+			      <li class="selSlide">
+			        <img src="img/shanandra.jpg" alt="slide2"> 
+			        <div class="caption left-align">
+			          <h2>Shanandra</h2>
+			          
+			        </div>
+			      </li>
+			      <li class="selSlide">
+			        <img src="img/homero.jpg" alt="slide3"> 
+			        <div class="caption right-align">
+			          <h2>Homero</h2>
+			          
+			        </div>
+			      </li>
+			    </ul>
+			  </div><!--Fin de slider-->
+					<button class="btnIniciar">HISTORIA de ROMELIA</button>
+			  </section>
+		</section><!-- fin de section inicio -->
+		
+		<section id="romeliaHistoria">
+			
+			<div class="container">
+				<iframe src="https://www.youtube.com/embed/3hziM2z37jE?rel=0&controls=1" allowfullscreen></iframe>
+				
+				<button class="btnShananda"><span class="glyphicon glyphicon-chevron-left"></span></button>
+				<button class="btnLiberacion">LIBEREMOS a ROMELIA</button>
+				<button class="btnHomero"><span class="glyphicon glyphicon-chevron-right"></span></button>
+			</div>
+		</section>
+
+		<section id="shananda">
+			<div class="container">
+				<iframe style="border: 0; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%" src="https://www.youtube.com/embed/5Y_Ve-kjhSs?rel=0&controls=1" allowfullscreen></iframe>
+				
+				<button id="tooltip" class="volverRomeDer" title="Volver a la historia de Romelia"><span class="glyphicon glyphicon-chevron-right"></span></button>
+				<button class="btnShananda">HISTORIA de BTN</button>
+			</div>
+		</section>
+
+		<section id="homero">
+			<div class="container">
+				<iframe style="border: 0; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%" src="https://www.youtube.com/embed/hUCESBx3f2A?rel=0&controls=1" allowfullscreen></iframe>
+				
+				<button id="tooltip2" class="volverRomeIzq" title="Volver a la historia de Romelia"><span class="glyphicon glyphicon-chevron-left"></span></button>
+				<button class="btnHomero">HISTORIA de BTN</button>
+			</div>
+		</section>
+
+		<section id="liberacion">
+			<div class="container">
+				<iframe style="border: 0; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%" src="https://www.youtube.com/embed/fxU6Q5DQaDI?rel=0&controls=1" allowfullscreen></iframe>
+
+				<button class="btnCreditos">Créditos?</button>
+			</div>
+		</section>
+	</main>
+	<footer>
+		
+	</footer>
+
+	<script src = "js/jquery-1.12.2.min.js"></script>
+	<script src = "js/bootstrap.min.js"></script>
+	<script src = "js/materialize.min.js"></script>
+	<script src = "js/scripts.js"></script>
+</body>
+</html>
