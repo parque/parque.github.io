@@ -4,7 +4,6 @@ var gulp = require('gulp');
 // Include Our Plugins
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
-var minify = require('gulp-minify');
 
 // Compile Our Sass
 gulp.task('sass', function() {
