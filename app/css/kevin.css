@@ -11,9 +11,7 @@ html, body {
 
 #seccionVideo {
   display: block;
-<<<<<<< HEAD
-  top: 15%;
-  left: 50%; }
+  margin-top: 80px; }
   #seccionVideo h2 {
     text-align: center;
     color: #fff;
@@ -21,35 +19,10 @@ html, body {
     letter-spacing: 3px;
     font-size: 40px; }
   #seccionVideo iframe {
-    margin-top: 18px;
-    margin-bottom: 40px;
-    margin-left: 20px; }
+    margin-top: 3%;
+    margin-bottom: 5%; }
   #seccionVideo h3 {
     text-align: center;
     color: #fff;
     font-family: cantarell;
     letter-spacing: 1px; }
-=======
-  margin-top: 80px;
-}
-
-#seccionVideo h2 {
-  text-align: center;
-  color: #fff;
-  font-family: oregano;
-  letter-spacing: 3px;
-  font-size: 40px;
-}
-
-#seccionVideo iframe {
-  margin-top: 3%;
-  margin-bottom: 5%;
-}
-
-#seccionVideo h3 {
-  text-align: center;
-  color: #fff;
-  font-family: cantarell;
-  letter-spacing: 1px;
-}
->>>>>>> 7488d63e5aa10665e1d1c37eae470c6b9cf7c309
