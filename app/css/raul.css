@@ -1,7 +1,9 @@
 @font-face {
   font-family: Cantarell;
-  src: url(../fonts/Cantarell.tff); }
+  src: url(../fonts/Cantarell.tff);
+}
 
+<<<<<<< HEAD
 #seccionTexto {
   display: block;
   position: absolute;
@@ -15,10 +17,38 @@
   padding-right: 2%;
   padding-left: 2%;
   padding-top: 5%; }
+=======
+@media (max-width: 480px) {
+  #seccionTexto {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) {
+  #seccionTexto {
+    display: block;
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding-right: 2%;
+    padding-left: 2%;
+    padding-top: 5%;
+  }
+>>>>>>> a11925fe50fc7614e72f0b180cc00a8c01069df7
   #seccionTexto p {
     color: #ffffff;
     font-family: Cantarell;
     text-align: center;
     font-size: 20px;
     font-weight: lighter;
+<<<<<<< HEAD
     text-shadow: 5px 5px 5px black; }
+=======
+  }
+}
+>>>>>>> a11925fe50fc7614e72f0b180cc00a8c01069df7
