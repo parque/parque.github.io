@@ -1,6 +1,7 @@
 @font-face {
   font-family: Cantarell;
-  src: url(../fonts/Cantarell.tff); }
+  src: url(../fonts/Cantarell.tff);
+}
 
 #seccionTexto {
   background-color: rgba(0, 0, 0, 0.5);
@@ -10,10 +11,13 @@
   padding-left: 3.5%;
   padding-top: 7%;
   height: 100vh;
-  margin-bottom: 0; }
-  #seccionTexto p {
-    color: #ffffff;
-    font-family: Cantarell;
-    text-align: center;
-    font-size: 150%;
-    font-weight: lighter; }
+  margin-bottom: 0;
+}
+
+#seccionTexto p {
+  color: #ffffff;
+  font-family: Cantarell;
+  text-align: center;
+  font-size: 150%;
+  font-weight: lighter;
+}
