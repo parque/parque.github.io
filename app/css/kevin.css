@@ -11,13 +11,16 @@ html, body {
 
 #seccionVideo {
   display: block;
-  margin-top: 80px; }
+  margin-top: 110px; }
   #seccionVideo h2 {
     text-align: center;
     color: #fff;
     font-family: oregano;
     letter-spacing: 3px;
-    font-size: 40px; }
+    font-size: 36px; }
+  #seccionVideo .embedContainer {
+    margin-top: 30px;
+    margin-bottom: 60px; }
   #seccionVideo h3 {
     text-align: center;
     color: #fff;
