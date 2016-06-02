@@ -14,7 +14,6 @@ html, body {
 
 #seccionVideo {
   display: block;
-  position: absolute;
   top: 15%;
   left: 50%;
 }
