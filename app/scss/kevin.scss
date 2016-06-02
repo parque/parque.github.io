@@ -10,8 +10,7 @@ html, body{
 	src: url(../fonts/Cantarell-Regular.ttf)
 }
 #seccionVideo{
-	display: block;
-	position: absolute;
+	display: block;	
 	top: 15%;
 	left: 50%;
 	h2{
@@ -30,5 +29,6 @@ html, body{
 		text-align: center;
 		color: #fff;
 		font-family: cantarell;
+		letter-spacing: 1px;
 	}
 }

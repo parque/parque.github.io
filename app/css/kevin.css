@@ -11,7 +11,6 @@ html, body {
 
 #seccionVideo {
   display: block;
-  position: absolute;
   top: 15%;
   left: 50%; }
   #seccionVideo h2 {
@@ -27,4 +26,5 @@ html, body {
   #seccionVideo h3 {
     text-align: center;
     color: #fff;
-    font-family: cantarell; }
+    font-family: cantarell;
+    letter-spacing: 1px; }
