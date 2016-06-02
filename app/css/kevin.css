@@ -1,11 +1,17 @@
-html, body {
-  height: 100%;
+@font-face {
+  font-family: oregano;
+  src: url(../fonts/Oregano-Regular.ttf);
 }
+
 #seccionVideo {
   display: block;
-  width: 100%;
-  height: 100%;
   position: absolute;
-  bottom: 0%;
-  right: 0%;
+  top: 15%;
+  left: 50%;
+}
+
+#seccionVideo #tituloParqueMarino {
+  color: #fff;
+  font-family: oregano;
+  letter-spacing: 3px;
 }
