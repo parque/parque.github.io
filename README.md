@@ -1,5 +1,9 @@
-<<<<<<< HEAD
+
 # romelia
+
+##Kevinsito
+
+>>>>>>> 83af4379d8ad89adf149d7371d2099669134a5f2
 ## Agregar el repositorio
 git remote add origin urlDelRepositorio
 
@@ -20,6 +24,3 @@ git status -s
 
 ## Ver registro de commits
 git log
-=======
-# romelia
->>>>>>> 4bb7bb262210c9b1519ca936fb6dc1b008b68991
