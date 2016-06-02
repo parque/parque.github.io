@@ -1,0 +1,23 @@
+{
+  "name": "romelia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinird/romelia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinird/romelia/issues"
+  },
+  "homepage": "https://github.com/vinird/romelia#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp-sass": "^2.3.1"
+  }
+}
