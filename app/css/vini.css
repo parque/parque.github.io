@@ -1,7 +1,6 @@
 @font-face {
   font-family: cantarell;
-  src: url("../fonts/Cantarell-Regular.ttf");
-}
+  src: url("../fonts/Cantarell-Regular.ttf"); }
 
 header nav {
   margin: 0px;
@@ -10,35 +9,26 @@ header nav {
   width: 100%;
   height: 50px;
   position: absolute;
-  z-index: 10;
-}
-
-header nav ul {
-  width: 100%;
-}
-
-header nav ul li {
-  display: inline;
-  font-family: cantarell;
-}
-
-header nav ul li a {
-  float: right;
-  display: inline-block;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 15px;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-header nav ul li a:hover {
-  text-decoration: none;
-  color: #fff;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  transition: 0.2s;
-}
+  z-index: 10; }
+  header nav ul {
+    width: 100%; }
+    header nav ul li {
+      display: inline;
+      font-family: cantarell; }
+      header nav ul li a {
+        float: right;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 15px;
+        margin-left: 3%;
+        margin-right: 3%; }
+        header nav ul li a:hover {
+          text-decoration: none;
+          color: #fff;
+          -webkit-transition: 0.2s;
+          -moz-transition: 0.2s;
+          transition: 0.2s; }
 
 #bodyBg {
   background-image: url("../img/fondo.jpg");
@@ -48,5 +38,4 @@ header nav ul li a:hover {
   position: absolute;
   width: 100%;
   height: 100vh;
-  z-index: -10;
-}
+  z-index: -10; }
