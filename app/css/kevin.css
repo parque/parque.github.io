@@ -25,6 +25,22 @@ html, body {
   font-size: 36px;
 }
 
+#seccionVideo h4 {
+  text-align: center;
+  color: #fff;
+  font-family: oregano;
+  letter-spacing: 3px;
+  font-size: 30px;
+}
+
+#seccionVideo h5 {
+  text-align: center;
+  color: #fff;
+  font-family: oregano;
+  letter-spacing: 3px;
+  font-size: 22px;
+}
+
 #seccionVideo .embedContainer {
   margin-top: 30px;
   margin-bottom: 60px;
