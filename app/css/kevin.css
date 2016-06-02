@@ -1,6 +1,15 @@
+html, body {
+  overflow: hidden;
+}
+
 @font-face {
   font-family: oregano;
   src: url(../fonts/Oregano-Regular.ttf);
+}
+
+@font-face {
+  font-family: cantarell;
+  src: url(../fonts/Cantarell-Regular.ttf);
 }
 
 #seccionVideo {
@@ -10,8 +19,22 @@
   left: 50%;
 }
 
-#seccionVideo #tituloParqueMarino {
+#seccionVideo h2 {
+  text-align: center;
   color: #fff;
   font-family: oregano;
   letter-spacing: 3px;
+  font-size: 40px;
+}
+
+#seccionVideo iframe {
+  margin-top: 18px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+}
+
+#seccionVideo h3 {
+  text-align: center;
+  color: #fff;
+  font-family: cantarell;
 }
