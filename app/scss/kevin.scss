@@ -3,11 +3,11 @@ html, body{
 }
 @font-face {
 	font-family: oregano;
-	src: url(../fonts/Oregano-Regular.ttf)
+	src: url(../fonts/Oregano-Regular.ttf);
 }
 @font-face {
 	font-family: cantarell;
-	src: url(../fonts/Cantarell-Regular.ttf)
+	src: url(../fonts/Cantarell-Regular.ttf);
 }
 #seccionVideo{
 	display: block;	
@@ -47,5 +47,6 @@ html, body{
 	a{
 		margin-left: 50%;
 		color: #fff;
+		font-size: 20px;
 	}
 }
