@@ -2,6 +2,11 @@
 	font-family: cantarell;
 	src: url('../fonts/Cantarell-Regular.ttf');
 }
+#idSeccionVideo{
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	transition: 0.5s;
+}
 header{
 		nav{
 			margin: 0px;
