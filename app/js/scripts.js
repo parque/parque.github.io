@@ -28,10 +28,10 @@ function onPlayerReady(event) {
    	    	console.log('El tiempo es mayor a 2');
    	    	cambiarTexto();
    	    }
-   	    if(event.target.getCurrentTime() > 5){
+   	    if(event.target.getCurrentTime() > 4 && event.target.getCurrentTime() < 20){
    	    	cambiarTexto();
 
-   	    	console.log('El tiempo es mayor a 5')
+   	    	console.log('El tiempo es mayor a 4')
    	    }
     },2000);
 }
