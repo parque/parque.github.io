@@ -1,3 +1,6 @@
+// Globals
+var video;
+///////////////////////////////////////////////////////////////
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
 
@@ -10,7 +13,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('videoPrincipal', {
-    videoId: '9edjOnavFE4', // esto es el id del video que se encuentra en la url
+    videoId: 'TUz750W2BYs', // esto es el id del video que se encuentra en la url
+    playerVars: { 'autoplay': 0, 'controls': 1 },
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -20,42 +24,104 @@ function onYouTubeIframeAPIReady() {
 
 // // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
+	video = event.target;
+	console.log(event.target);
     // event.target.playVideo();
 
-    console.log(event.target.getCurrentTime());
-    setInterval(function(){
-   	    if(event.target.getCurrentTime() > 2 && event.target.getCurrentTime() < 5){
-   	    	console.log('El tiempo es mayor a 2');
-   	    	cambiarTexto();
-   	    }
-   	    if(event.target.getCurrentTime() > 4 && event.target.getCurrentTime() < 20){
-   	    	cambiarTexto();
-
-   	    	console.log('El tiempo es mayor a 4')
-   	    }
-    },2000);
+   	    	// event.target.loadVideoById('TN-Rub-lmc4');
+ 
 }
 
 // // 5. The API calls this function when the player's state changes.
 // //    The function indicates that when playing a video (state=1),
 function onPlayerStateChange(event) {
-  console.log('cambio el estado a: '+event.target.getPlayerState());
-
-  if (event.target.getPlayerState() != 2) {
+  var state = event.target.getPlayerState();
+  
+  if (state != 2) {
   	aumentarVideo();
   } else {
   	reducirVideo();
   }
 }
+///////////////////////////////////////////////////////
 
 function cambiarTexto(){
 	$('.textoCambiante').fadeToggle(200)
 }
 function aumentarVideo(){
-	$('#idSeccionVideo').removeClass('col-sm-3 col-sm-offset-3');
-	$('#idSeccionVideo').addClass('col-sm-7 col-sm-offset-1');
+	var seccionV = $('#idSeccionVideo');
+	seccionV.removeClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
+	seccionV.addClass('col-xs-12 col-sm-7 col-sm-offset-1');
+	// seccionV.css('transform', 'translate(0, 0)');
+	$('#bgDark').css('background-color', 'rgba(0,0,0,0.7)');
 }
 function reducirVideo(){
-	$('#idSeccionVideo').removeClass('col-sm-7 col-sm-offset-1');
-	$('#idSeccionVideo').addClass('col-sm-3 col-sm-offset-3');
+	var seccionV = $('#idSeccionVideo');
+	seccionV.removeClass('col-xs-12 col-sm-7 col-sm-offset-1');
+	seccionV.addClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
+	// seccionV.css('transform', 'translate(0, 10vh)');
+	$('#bgDark').css('background-color', 'rgba(0,0,0,0.0)');
 }
+
+$('#btnChangeDown').click(function(){
+	var btn = $('#btnChangeDown');
+	var sv = $('#seccionVideo');
+	var title = $('.titleText');
+	sv.addClass('animated fadeOutUp');
+	setTimeout(function(){
+		sv.removeClass('fadeOutUp');
+		// si esta en la historia de introduccion
+		if (btn.attr('story') == 'main'){
+			video.loadVideoById('9edjOnavFE4');
+			btn.prev('h3').text('  Liberar a Romelia');
+			btn.attr('story', 'romelia');
+			title.text('Romelia la Tortuga');
+		} else{
+			if (btn.attr('story') == 'romelia') {
+				video.loadVideoById('YqqDQ-1_pBc');
+				btn.prev('h3').text(' Info');
+				btn.attr('story', 'liverar');
+				title.text('Liveración de Romelia');
+			} else {
+				if(btn.attr('story') == 'liverar'){
+					/// esta es la ultima seccion
+					video.destroy();
+					btn.prev('h3').text(' Final');
+					btn.children('i').removeClass('fa fa-chevron-down');
+					title.text('');
+				}
+			}
+		}
+		//////////////////////////////////////////
+
+		sv.addClass('fadeInUp');
+	},500);
+});
+
+/////////////////////
+// Boton para moviles
+$('#menuBtn').click(function() {
+	var ul = $('#ulNav');
+	console.log(ul.attr('isOpen'));
+	if (ul.attr('isOpen') == 'false') {
+		$('#ulNav li').removeClass('hidden-xs');
+		ul.addClass('menuOpenUl');
+		ul.attr('isOpen', 'true');
+	} else{
+		$('#ulNav li').addClass('hidden-xs');
+		ul.removeClass('menuOpenUl');
+		ul.attr('isOpen', 'false');
+
+	}
+
+});
+$(window).resize(function(){
+	var whith = $(this).width(); //767
+	if (whith > 767) {
+		$("#ulNav li").addClass('hidden-xs');
+		$("#ulNav").removeClass('menuOpenUl');
+	}
+
+});
+
+// <iframe width="1280" height="720" src="https://www.youtube.com/embed/nlTZuAqB6mI" frameborder="0" allowfullscreen></iframe>
