@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/raul.css">
 	<link rel="stylesheet" type="text/css" href="css/kevin.css">
 	<link rel="stylesheet" type="text/css" href="css/vini.css">
 	<link rel="stylesheet" type="text/css" href="css/nacho.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
 
 	<script src="js/jquery-1.12.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -18,17 +20,25 @@
 <body>
 	<header>
 		<nav>
-			<ul>
-				<li><a href="">Info</a></li>
-				<li><a href="">Rescate Animal</a></li>
-				<li><a href="">Inicio</a></li>
-				<li class="pull-left"><a href=""><i class="fa fa-home" aria-hidden="true"></i></a></li>
+			<ul id="ulNav" class="" isOpen="false">
+				<li class="hidden-xs"><a href="">Info</a></li>
+				<li class="hidden-xs"><a href="">Rescate Animal</a></li>
+				<li class="hidden-xs"><a href="">Parque Marino</a></li>
+				<li class="pull-left hidden-xs">
+					<a href="">
+						<i class="fa fa-home fa-lg" aria-hidden="true"></i></a>
+				</li>
 			</ul>
+			<div id="menuBtn" isOpen="false" class="hidden-sm hidden-md hidden-lg pull-right">
+				<a>
+					<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+				</a>
+			</div>
 		</nav>
 	</header>
 	<div id="bodyBg"></div>
 	<main class="container-fluid">
-	<div class="row">
+	<div class="row mainRow">
 		<div id="seccionTexto" class="hidden-xs col-sm-3">
 			<section>
 				
@@ -45,18 +55,20 @@
 			<section>
 				<div id="seccionVideo">
 					
-						<h2 class="hidden-xs hidden-sm">Parque Marino Puntarenas</h2>
-						<h4 class="hidden-xs hidden-md hidden-lg">Parque Marino Puntarenas</h4>
-						<h5 class="hidden-sm hidden-md hidden-lg">Parque Marino Puntarenas</h5>
+						<h2 class="titleText hidden-xs hidden-sm">Parque Marino Puntarenas</h2>
+						<h4 class="titleText hidden-xs hidden-md hidden-lg">Parque Marino Puntarenas</h4>
+						<h5 class="titleText hidden-sm hidden-md hidden-lg">Parque Marino Puntarenas</h5>
 					<div class="embed-responsive embed-responsive-16by9 embedContainer">
 						
 						<!-- este div crea el iframe por medio de id (ver script)-->
 						<div id="videoPrincipal"></div>
 
+						<div id="videoRomelia"></div>
+
 					</div>
-					<div class="animated pulse infinite">
+					<div class="animated pulse infinite text-center">
 						<h3>Ver historia de Romelia</h3>
-						<a href="" ><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+						<a id="btnChangeDown" class="text-center" story="main"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
 					</div>
 				</div>
 			</section>
@@ -64,6 +76,7 @@
 	</div><!-- fin del row contenedor de las dos sections -->
 	</main>
 
+<div id="bgDark"></div>
 <script src="js/scripts.js"></script>
 </body>
 </html>
