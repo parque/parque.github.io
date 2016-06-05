@@ -80,10 +80,10 @@ $('#btnChangeDown').click(function(){
 			if (btn.attr('story') == 'romelia') {
 				video.loadVideoById('YqqDQ-1_pBc');
 				btn.prev('h3').text(' Info');
-				btn.attr('story', 'liverar');
-				title.text('Liveración de Romelia');
+				btn.attr('story', 'liberar');
+				title.text('Liberación de Romelia');
 			} else {
-				if(btn.attr('story') == 'liverar'){
+				if(btn.attr('story') == 'liberar'){
 					/// esta es la ultima seccion
 					video.destroy();
 					btn.prev('h3').text(' Final');
