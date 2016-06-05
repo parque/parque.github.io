@@ -3,7 +3,6 @@
 
 ##Kevinsito
 
->>>>>>> 83af4379d8ad89adf149d7371d2099669134a5f2
 ## Agregar el repositorio
 git remote add origin urlDelRepositorio
 
