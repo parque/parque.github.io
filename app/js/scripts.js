@@ -42,6 +42,9 @@ function onPlayerStateChange(event) {
   } else {
   	reducirVideo();
   }
+  if(state == 0){
+  	reducirVideo();
+  }
 }
 ///////////////////////////////////////////////////////
 
@@ -50,6 +53,7 @@ function cambiarTexto(){
 }
 function aumentarVideo(){
 	var seccionV = $('#idSeccionVideo');
+	seccionV.css("margin-top", "70px");
 	seccionV.removeClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	seccionV.addClass('col-xs-12 col-sm-7 col-sm-offset-1');
 	// seccionV.css('transform', 'translate(0, 0)');
@@ -57,6 +61,7 @@ function aumentarVideo(){
 }
 function reducirVideo(){
 	var seccionV = $('#idSeccionVideo');
+	seccionV.css("margin-top", "110px");
 	seccionV.removeClass('col-xs-12 col-sm-7 col-sm-offset-1');
 	seccionV.addClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	// seccionV.css('transform', 'translate(0, 10vh)');

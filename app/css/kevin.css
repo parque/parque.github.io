@@ -12,9 +12,12 @@ html, body {
   src: url(../fonts/Cantarell-Regular.ttf);
 }
 
+#idSeccionVideo {
+  margin-top: 110px;
+}
+
 #seccionVideo {
   display: block;
-  margin-top: 110px;
 }
 
 #seccionVideo h2 {
