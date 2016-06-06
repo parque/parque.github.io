@@ -9,9 +9,11 @@ html, body {
   font-family: cantarell;
   src: url(../fonts/Cantarell-Regular.ttf); }
 
-#seccionVideo {
-  display: block;
+#idSeccionVideo {
   margin-top: 110px; }
+
+#seccionVideo {
+  display: block; }
   #seccionVideo h2 {
     text-align: center;
     color: #fff;

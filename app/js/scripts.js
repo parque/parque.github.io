@@ -29,17 +29,20 @@ function onPlayerReady(event) {
     // event.target.playVideo();
 
    	    	// event.target.loadVideoById('TN-Rub-lmc4');
- 
+
 }
 
 // // 5. The API calls this function when the player's state changes.
 // //    The function indicates that when playing a video (state=1),
 function onPlayerStateChange(event) {
   var state = event.target.getPlayerState();
-  
+
   if (state != 2) {
   	aumentarVideo();
   } else {
+  	reducirVideo();
+  }
+  if(state == 0){
   	reducirVideo();
   }
 }
@@ -50,6 +53,7 @@ function cambiarTexto(){
 }
 function aumentarVideo(){
 	var seccionV = $('#idSeccionVideo');
+	seccionV.css("margin-top", "70px");
 	seccionV.removeClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	seccionV.addClass('col-xs-12 col-sm-7 col-sm-offset-1');
 	// seccionV.css('transform', 'translate(0, 0)');
@@ -57,6 +61,7 @@ function aumentarVideo(){
 }
 function reducirVideo(){
 	var seccionV = $('#idSeccionVideo');
+	seccionV.css("margin-top", "110px");
 	seccionV.removeClass('col-xs-12 col-sm-7 col-sm-offset-1');
 	seccionV.addClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	// seccionV.css('transform', 'translate(0, 10vh)');
@@ -122,6 +127,32 @@ $(window).resize(function(){
 		$("#ulNav").removeClass('menuOpenUl');
 	}
 
+});
+
+$('#textoBtn').click(function(){
+  var texto = $('#seccionTexto');
+  var btnClose = $('#btnTxtClose');
+  var btnTexto = $('#btnTexto');
+  console.log('Mostrando texto');
+
+  btnClose.css('display','block');
+  btnTexto.css('display','none');
+
+  texto.removeClass('hidden-xs');
+
+});
+
+$('#textoBtnClose').click(function(){
+  var texto = $('#seccionTexto');
+  var btnClose = $('#btnTxtClose');
+  var btnTexto = $('#btnTexto');
+
+  console.log('Ocultando texto');
+
+  btnClose.css('display','none');
+  btnTexto.css('display','block');
+
+  texto.addClass('hidden-xs');
 });
 
 // <iframe width="1280" height="720" src="https://www.youtube.com/embed/nlTZuAqB6mI" frameborder="0" allowfullscreen></iframe>
