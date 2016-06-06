@@ -29,14 +29,14 @@ function onPlayerReady(event) {
     // event.target.playVideo();
 
    	    	// event.target.loadVideoById('TN-Rub-lmc4');
- 
+
 }
 
 // // 5. The API calls this function when the player's state changes.
 // //    The function indicates that when playing a video (state=1),
 function onPlayerStateChange(event) {
   var state = event.target.getPlayerState();
-  
+
   if (state != 2) {
   	aumentarVideo();
   } else {
@@ -135,19 +135,6 @@ $(document).ready(function(){
 	var show = true;
 	var count = 0;
 
-	/*setInterval(function(){
-		if(show){
-			txtL.fadeOut(1000);
-			txtR.fadeOut(1000);
-			show = false;
-		}else{
-			setTimeout(function(){
-				txtL.fadeIn(1000);
-				txtR.fadeIn(1000);
-				show = true;
-			},8000);
-		}
-	}, 10000);*/
 	setInterval(function(){
 		if(count < 8){
 			txtL.fadeOut(2000);
@@ -160,5 +147,31 @@ $(document).ready(function(){
 		}
 	}, 1000);
 
+	$('#textoBtn').click(function(){
+	  var texto = $('#seccionTexto');
+	  var btnClose = $('#btnTxtClose');
+	  var btnTexto = $('#btnTexto');
+	  console.log('Mostrando texto');
+
+	  btnClose.css('display','block');
+	  btnTexto.css('display','none');
+
+	  texto.removeClass('hidden-xs');
+
+	});
+
+	$('#textoBtnClose').click(function(){
+	  var texto = $('#seccionTexto');
+	  var btnClose = $('#btnTxtClose');
+	  var btnTexto = $('#btnTexto');
+
+	  console.log('Ocultando texto');
+
+	  btnClose.css('display','none');
+	  btnTexto.css('display','block');
+
+	  texto.addClass('hidden-xs');
+	});
 });
-// <iframe width="1280" height="720" src="https://www.youtube.com/embed/nlTZuAqB6mI" frameborder="0" allowfullscreen></iframe>
+
+

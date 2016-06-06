@@ -1,22 +1,19 @@
 html, body {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 @font-face {
   font-family: oregano;
-  src: url(../fonts/Oregano-Regular.ttf);
-}
+  src: url(../fonts/Oregano-Regular.ttf); }
 
 @font-face {
   font-family: cantarell;
-  src: url(../fonts/Cantarell-Regular.ttf);
-}
+  src: url(../fonts/Cantarell-Regular.ttf); }
 
 #idSeccionVideo {
-  margin-top: 110px;
-}
+  margin-top: 110px; }
 
 #seccionVideo {
+<<<<<<< HEAD
   display: block;
 }
 
@@ -146,3 +143,35 @@ html, body {
   border-radius: 6px;
   padding: 8px 10px;
 }
+=======
+  display: block; }
+  #seccionVideo h2 {
+    text-align: center;
+    color: #fff;
+    font-family: oregano;
+    letter-spacing: 3px;
+    font-size: 36px; }
+  #seccionVideo h4 {
+    text-align: center;
+    color: #fff;
+    font-family: oregano;
+    letter-spacing: 3px;
+    font-size: 30px; }
+  #seccionVideo h5 {
+    text-align: center;
+    color: #fff;
+    font-family: oregano;
+    letter-spacing: 3px;
+    font-size: 22px; }
+  #seccionVideo .embedContainer {
+    margin-top: 30px;
+    margin-bottom: 60px; }
+  #seccionVideo h3 {
+    text-align: center;
+    color: #fff;
+    font-family: cantarell;
+    letter-spacing: 1px; }
+  #seccionVideo a {
+    color: #fff;
+    font-size: 20px; }
+>>>>>>> cc92bdde4ac157ec6b82199393e97801a9c4497d
