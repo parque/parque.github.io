@@ -129,4 +129,36 @@ $(window).resize(function(){
 
 });
 
+$(document).ready(function(){
+	var txtL = $('.txtLeft');
+	var txtR = $('.txtRight');
+	var show = true;
+	var count = 0;
+
+	/*setInterval(function(){
+		if(show){
+			txtL.fadeOut(1000);
+			txtR.fadeOut(1000);
+			show = false;
+		}else{
+			setTimeout(function(){
+				txtL.fadeIn(1000);
+				txtR.fadeIn(1000);
+				show = true;
+			},8000);
+		}
+	}, 10000);*/
+	setInterval(function(){
+		if(count < 8){
+			txtL.fadeOut(2000);
+			txtR.fadeOut(2000);	
+			count++;
+		}else{
+			txtL.fadeIn(2000);
+			txtR.fadeIn(2000);
+			count = 0;
+		}
+	}, 1000);
+
+});
 // <iframe width="1280" height="720" src="https://www.youtube.com/embed/nlTZuAqB6mI" frameborder="0" allowfullscreen></iframe>

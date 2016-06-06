@@ -60,3 +60,89 @@ html, body {
   color: #fff;
   font-size: 20px;
 }
+
+#seccionVideo .btnRight {
+  display: block;
+  position: absolute;
+  top: 15%;
+  right: -80%;
+}
+
+#seccionVideo .btnRight h3 {
+  display: block;
+  float: left;
+}
+
+#seccionVideo .btnRight a {
+  display: block;
+  float: left;
+  margin-top: 17px;
+  margin-left: 20px;
+}
+
+#seccionVideo .btnLeft {
+  display: block;
+  position: absolute;
+  top: 15%;
+  left: -87%;
+}
+
+#seccionVideo .btnLeft h3 {
+  display: block;
+  float: right;
+}
+
+#seccionVideo .btnLeft a {
+  display: block;
+  float: right;
+  margin-top: 17px;
+  margin-right: 20px;
+}
+
+.btnRightMov {
+  display: block;
+  position: absolute;
+  top: 40%;
+  right: -5px;
+}
+
+.btnRightMov h5 {
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-family: cantarell;
+  font-size: 14px;
+  top: -45px;
+  right: 10px;
+}
+
+.btnRightMov a {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.btnLeftMov {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: -5px;
+}
+
+.btnLeftMov h5 {
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-family: cantarell;
+  font-size: 14px;
+  top: -45px;
+  left: 10px;
+}
+
+.btnLeftMov a {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  padding: 8px 10px;
+}

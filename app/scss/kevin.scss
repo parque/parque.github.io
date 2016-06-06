@@ -14,7 +14,6 @@ html, body{
 }
 #seccionVideo{
 	display: block;
-	
 	h2{
 		text-align: center;
 		color: #fff;
@@ -50,5 +49,79 @@ html, body{
 		// margin-left: 50%;
 		color: #fff;
 		font-size: 20px;
+	}
+	.btnRight{
+		display: block;
+		position: absolute;
+		top: 15%;
+		right: -80%;
+		h3{
+			display: block;
+			float: left;
+		}
+		a{
+			display: block;
+			float: left;
+			margin-top: 17px;
+			margin-left: 20px;
+		}
+	}
+	.btnLeft{
+		display: block;
+		position: absolute;
+		top: 15%;
+		left: -87%;
+		h3{
+			display: block;
+			float: right;
+		}
+		a{
+			display: block;
+			float: right;
+			margin-top: 17px;
+			margin-right: 20px;
+		}
+	}
+}
+.btnRightMov{
+	display: block;
+	position: absolute;
+	top: 40%;
+	right: -5px;
+	h5{
+		display: block;
+		position: absolute;
+		color: #fff;
+		font-family: cantarell;
+		font-size: 14px;
+		top: -45px;
+		right: 10px;
+	}
+	a{
+		display: block;
+		background-color: rgba(0,0,0,0.5);
+		border-radius: 6px;
+		padding: 8px 10px;
+	}
+}
+.btnLeftMov{
+	display: block;
+	position: absolute;
+	top: 40%;
+	left: -5px;
+	h5{
+		display: block;
+		position: absolute;
+		color: #fff;
+		font-family: cantarell;
+		font-size: 14px;
+		top: -45px;
+		left: 10px;
+	}
+	a{
+		display: block;
+		background-color: rgba(0,0,0,0.5);
+		border-radius: 6px;
+		padding: 8px 10px;
 	}
 }
