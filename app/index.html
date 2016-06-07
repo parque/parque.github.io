@@ -58,7 +58,7 @@
 		</div>
 		<div id="idSeccionVideo" class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3">
 			<section>
-				<div id="seccionVideo">
+				<div id="seccionVideo" storyState="default">
 
 						<h2 class="titleText hidden-xs hidden-sm">Parque Marino Puntarenas</h2>
 						<h4 class="titleText hidden-xs hidden-md hidden-lg">Parque Marino Puntarenas</h4>
@@ -71,17 +71,17 @@
 						<div id="videoRomelia"></div>
 
 					</div>
-					<div class="animated pulse infinite text-center">
+					<div class="animated pulse infinite text-center" id="divDown">
 						<h3>Ver historia de Romelia</h3>
 						<a id="btnChangeDown" class="text-center" story="main"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
 					</div>
-					<div class="animated pulse infinite text-center btnRight hidden-xs">
+					<div class="animated pulse infinite text-center btnRight hidden-xs hide">
 						<h3>Derecha</h3>
-						<a id="btnChangeRight" class="text-center"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></a>
+						<a class="text-center"><i class="fa fa-chevron-right fa-2x btnChangeRight" aria-hidden="true"></i></a>
 					</div>
-					<div class="animated pulse infinite text-center btnLeft hidden-xs">
+					<div class="animated pulse infinite text-center btnLeft hidden-xs hide">
 						<h3>Izquierda</h3>
-						<a id="btnChangeLeft" class="text-center"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a>
+						<a class="text-center"><i class="fa fa-chevron-left fa-2x btnChangeLeft" aria-hidden="true"></i></a>
 					</div>
 					
 				</div>
@@ -90,14 +90,15 @@
 	</div><!-- fin del row contenedor de las dos sections  -->
 	</main>
 
-<div class="animated pulse infinite text-center btnLeftMov hidden-sm hidden-md hidden-lg">
-	<h5 class="txtLeft">Historia Homero</h5>
-	<a id="btnChangeLeft" class="text-center"><i class="fa fa-chevron-left fa-2x" aria-hidden="true"></i></a>
-</div>
-<div class="animated pulse infinite text-center btnRightMov hidden-sm hidden-md hidden-lg">
+<div class="animated pulse infinite text-center btnRightMov hidden-sm hidden-md hidden-lg hide">
 	<h5 class="txtRight">Historia Mario</h5>
-	<a id="btnChangeRight" class="text-center"><i class="fa fa-chevron-right fa-2x" aria-hidden="true"></i></a>
+	<a class="text-center"><i class="fa fa-chevron-right fa-2x btnChangeRight" aria-hidden="true"></i></a>
 </div>
+<div class="animated pulse infinite text-center btnLeftMov hidden-sm hidden-md hidden-lg hide">
+	<h5 class="txtLeft">Historia Homero</h5>
+	<a class="text-center"><i class="fa fa-chevron-left fa-2x btnChangeLeft" aria-hidden="true"></i></a>
+</div>
+
 <div id="bgDark"></div>
 
 <script src="js/scripts.js"></script>

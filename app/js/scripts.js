@@ -53,25 +53,34 @@ function cambiarTexto(){
 }
 function aumentarVideo(){
 	var seccionV = $('#idSeccionVideo');
+	$('.btnLeftMov').addClass('hidden-xs');
+	$('.btnRightMov').addClass('hidden-xs');
 	seccionV.css("margin-top", "70px");
 	seccionV.removeClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	seccionV.addClass('col-xs-12 col-sm-7 col-sm-offset-1');
-	// seccionV.css('transform', 'translate(0, 0)');
 	$('#bgDark').css('background-color', 'rgba(0,0,0,0.7)');
+	
 }
 function reducirVideo(){
 	var seccionV = $('#idSeccionVideo');
+	$('.btnLeftMov').removeClass('hidden-xs');
+	$('.btnRightMov').removeClass('hidden-xs');
 	seccionV.css("margin-top", "110px");
 	seccionV.removeClass('col-xs-12 col-sm-7 col-sm-offset-1');
 	seccionV.addClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
-	// seccionV.css('transform', 'translate(0, 10vh)');
 	$('#bgDark').css('background-color', 'rgba(0,0,0,0.0)');
+	
 }
 
 $('#btnChangeDown').click(function(){
 	var btn = $('#btnChangeDown');
 	var sv = $('#seccionVideo');
 	var title = $('.titleText');
+	var btnL = $('.btnLeft');
+	var btnLM = $('.btnLeftMov');
+	var btnR = $('.btnRight');
+	var btnRM = $('.btnRightMov');
+	
 	sv.addClass('animated fadeOutUp');
 	setTimeout(function(){
 		sv.removeClass('fadeOutUp');
@@ -81,12 +90,20 @@ $('#btnChangeDown').click(function(){
 			btn.prev('h3').text('  Liberar a Romelia');
 			btn.attr('story', 'romelia');
 			title.text('Romelia la Tortuga');
+			btnL.removeClass('hide');
+			btnLM.removeClass('hide');
+			btnR.removeClass('hide');
+			btnRM.removeClass('hide');
 		} else{
 			if (btn.attr('story') == 'romelia') {
 				video.loadVideoById('YqqDQ-1_pBc');
 				btn.prev('h3').text(' Info');
 				btn.attr('story', 'liberar');
 				title.text('Liberación de Romelia');
+				btnL.addClass('hide');
+				btnLM.addClass('hide');
+				btnR.addClass('hide');
+				btnRM.addClass('hide');
 			} else {
 				if(btn.attr('story') == 'liberar'){
 					/// esta es la ultima seccion
@@ -94,12 +111,90 @@ $('#btnChangeDown').click(function(){
 					btn.prev('h3').text(' Final');
 					btn.children('i').removeClass('fa fa-chevron-down');
 					title.text('');
+					
 				}
 			}
 		}
-		//////////////////////////////////////////
-
+		
 		sv.addClass('fadeInUp');
+	},500);
+});
+
+//TRANSICIÓN PARA LOS LADOS///////////////////////
+// derecha
+$('.btnChangeRight').click(function(){
+var btnR = $(this);
+var sv = $('#seccionVideo');
+var title = $('.titleText');
+var btnDown = $("#divDown");
+
+	sv.removeClass('fadeOutLeft');
+	sv.removeClass('fadeInRight');
+	sv.removeClass('fadeInUp');
+	sv.removeClass('fadeInLeft');
+
+
+	// si esta en la historia de introduccion
+	if (sv.attr("storyState") == 'default'){
+		sv.addClass('animated fadeOutLeft');
+			title.text('Historia de Mario');
+			sv.attr("storyState", "mario");
+		setTimeout(function(){
+			btnDown.addClass("hide");
+			$('.btnRight').addClass('hide');
+			$('.btnRightMov').addClass('hide');
+			sv.removeClass('fadeOutLeft');
+			video.loadVideoById('9edjOnavFE4');
+			sv.addClass('fadeInRight');
+		},500);
+		/*$('.btnLeft').css('margin-top','67px');*/
+	} else {
+		if(sv.attr("storyState") == 'homero'){
+			setTimeout(function(){
+				title.text('Parque Marino Puntarenas');
+				sv.attr("storyState", "default");
+				$('.btnLeft').removeClass('hide');
+				$('.btnLeftMov').removeClass('hide');
+				btnDown.removeClass("hide");
+				video.loadVideoById('9edjOnavFE4');
+				sv.addClass('fadeInRight');
+			},500);
+		}
+	}
+	
+});
+
+// izquierda
+$('.btnChangeLeft').click(function(){
+var btnL = $(this);
+var sv = $('#seccionVideo');
+var title = $('.titleText');
+var btnDown = $("#divDown");
+
+sv.addClass('animated fadeOutRight');
+sv.removeClass('fadeInRight');
+	setTimeout(function(){
+		sv.removeClass('fadeOutRight');
+		// si esta en la historia de homero
+		if (sv.attr("storyState") == 'mario'){
+			video.loadVideoById('9edjOnavFE4');
+			title.text('Parque Marino Puntarenas');
+			sv.attr("storyState", "default");
+			$('.btnRight').removeClass('hide');
+			$('.btnRightMov').removeClass('hide');
+			btnDown.removeClass("hide");
+			/*$('.btnLeft').css('margin-top','67px');*/
+		} else {
+			if(sv.attr("storyState")=='default'){
+				video.loadVideoById('9edjOnavFE4');
+				title.text('Historia de Homero');
+				sv.attr("storyState", "homero");
+				$('.btnLeft').addClass('hide');
+				$('.btnLeftMov').addClass('hide');
+				btnDown.addClass("hide");
+			}
+		} 
+		sv.addClass('fadeInLeft');
 	},500);
 });
 
@@ -116,9 +211,7 @@ $('#menuBtn').click(function() {
 		$('#ulNav li').addClass('hidden-xs');
 		ul.removeClass('menuOpenUl');
 		ul.attr('isOpen', 'false');
-
 	}
-
 });
 $(window).resize(function(){
 	var whith = $(this).width(); //767
@@ -126,7 +219,6 @@ $(window).resize(function(){
 		$("#ulNav li").addClass('hidden-xs');
 		$("#ulNav").removeClass('menuOpenUl');
 	}
-
 });
 
 $(document).ready(function(){
@@ -152,26 +244,22 @@ $(document).ready(function(){
 	  var btnClose = $('#btnTxtClose');
 	  var btnTexto = $('#btnTexto');
 	  console.log('Mostrando texto');
-
 	  btnClose.css('display','block');
 	  btnTexto.css('display','none');
-
 	  texto.removeClass('hidden-xs');
-
+	  $('.btnLeftMov').addClass('hidden-xs');
+	  $('.btnRightMov').addClass('hidden-xs');
 	});
 
 	$('#textoBtnClose').click(function(){
 	  var texto = $('#seccionTexto');
 	  var btnClose = $('#btnTxtClose');
 	  var btnTexto = $('#btnTexto');
-
 	  console.log('Ocultando texto');
-
 	  btnClose.css('display','none');
 	  btnTexto.css('display','block');
-
 	  texto.addClass('hidden-xs');
+	  $('.btnLeftMov').removeClass('hidden-xs');
+	  $('.btnRightMov').removeClass('hidden-xs');
 	});
 });
-
-
