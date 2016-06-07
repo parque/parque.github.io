@@ -26,10 +26,6 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
 	video = event.target;
 	console.log(event.target);
-    // event.target.playVideo();
-
-   	    	// event.target.loadVideoById('TN-Rub-lmc4');
-
 }
 
 // // 5. The API calls this function when the player's state changes.
