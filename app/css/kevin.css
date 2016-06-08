@@ -64,7 +64,7 @@ html, body {
 #seccionVideo .btnRight {
   display: block;
   position: absolute;
-  top: 15%;
+  top: 30%;
   right: -80%;
 }
 
@@ -83,7 +83,7 @@ html, body {
 #seccionVideo .btnLeft {
   display: block;
   position: absolute;
-  top: 15%;
+  top: 30%;
   left: -87%;
 }
 
