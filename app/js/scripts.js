@@ -25,7 +25,7 @@ var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('videoPrincipal', {
     videoId: 'TUz750W2BYs', // esto es el id del video que se encuentra en la url
-    playerVars: { 'autoplay': 0, 'controls': 1 },
+    playerVars: { 'autoplay': 0, 'controls': 1 ,'rel': 0, 'showinfo': 0 , 'controls': 2 , 'autohide' : 2},
     events: {
       'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
@@ -36,7 +36,6 @@ function onYouTubeIframeAPIReady() {
 // // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
 	video = event.target;
-	console.log(event.target);
 }
 
 // // 5. The API calls this function when the player's state changes.
@@ -98,18 +97,18 @@ $('#btnChangeDown').click(function(){
 		// si esta en la historia de introduccion
 		if (btn.attr('story') == 'main'){
 			sv.attr("storyState", 'default');
-			video.loadVideoById('9edjOnavFE4');
 			btn.prev('h3').text('  Liberar a Romelia');
 			btn.attr('story', 'romelia');
 			title.text('Romelia la Tortuga');
+			video.loadVideoById('9edjOnavFE4');
 		} else{
 			if (btn.attr('story') == 'romelia') {
 				sv.attr("storyState", "none");
-				video.loadVideoById('YqqDQ-1_pBc');
-				btn.prev('h3').text(' Info');
+				btn.prev('h3').text('Créditos');
 				btn.attr('story', 'liberar');
 				title.text('Liberación de Romelia');
 				hideButtonsAll();
+				video.loadVideoById('YqqDQ-1_pBc');
 			} else {
 				if(btn.attr('story') == 'liberar'){
 					/// esta es la ultima seccion
@@ -117,7 +116,12 @@ $('#btnChangeDown').click(function(){
 					btn.prev('h3').text(' Final');
 					btn.children('i').removeClass('fa fa-chevron-down');
 					title.text('');
-					
+					$('#idSeccionVideo').remove();
+					$('#seccionCreditos').removeClass('hide');
+					$('#seccionCreditos').hide();
+					setTimeout(function(){
+						$('#seccionCreditos').fadeIn(2000);
+					},500);
 				}
 			}
 		}
@@ -146,8 +150,10 @@ $('.btnChangeRight').click(function(){
 			title.text('Historia de Mario');
 			sv.attr("storyState", "mario");
 			btnDown.addClass("hide");
-			video.loadVideoById('9edjOnavFE4');
+			$('.btnLeft h4').text('Historia Romelia');
+			$('.btnLeftMov h5').text('Historia Romelia');
 			sv.addClass('fadeInRight');
+			video.loadVideoById('9edjOnavFE4');
 		},500);
 	} else {
 		if(sv.attr("storyState") == 'homero'){
@@ -157,7 +163,10 @@ $('.btnChangeRight').click(function(){
 				title.text('Romelia la Tortuga');
 				sv.attr("storyState", "default");
 				btnDown.removeClass("hide");
+				$('.btnRight h4').text('Historia Mario');
+				$('.btnRightMov h5').text('Historia Mario');
 				video.loadVideoById('9edjOnavFE4');
+
 			},500);
 		}
 	}
@@ -177,19 +186,22 @@ $('.btnChangeLeft').click(function(){
 			sv.attr("storyState", "default");
 			sv.addClass('fadeInLeft');
 			title.text('Romelia la Tortuga');
-			video.loadVideoById('9edjOnavFE4');
+			$('.btnLeft h4').text('Historia Homero');
+			$('.btnLeftMov h5').text('Historia Homero')
 			btnDown.removeClass("hide");	
+			video.loadVideoById('9edjOnavFE4');
 		},500);
-			/*$('.btnLeft').css('margin-top','67px');*/
 	} else {
 		if(sv.attr("storyState")=='default'){
 			setTimeout(function(){
 				reseter();
 				sv.attr("storyState", "homero");
-				video.loadVideoById('9edjOnavFE4');
 				title.text('Historia de Homero');
 				hideButtonsLeft();
+				$('.btnRight h4').text('Historia Romelia');
+				$('.btnRightMov h5').text('Historia Romelia');
 				sv.addClass('fadeInLeft');
+				video.loadVideoById('9edjOnavFE4');
 			},500);
 			btnDown.addClass("hide");
 		}
@@ -261,7 +273,7 @@ $(document).ready(function(){
 	var count = 0;
 
 	setInterval(function(){
-		if(count < 8){
+		if(count < 6){
 			txtL.fadeOut(2000);
 			txtR.fadeOut(2000);	
 			count++;

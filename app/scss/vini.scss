@@ -54,8 +54,8 @@ a {
 		a{
 			display: block;
 			float: left;
-			margin-top: 8px;
-			margin-left: 20px;
+			margin-top: 7px;
+			margin-left: 25px;
 		}
 	}
 	.btnLeft{
@@ -70,8 +70,8 @@ a {
 		a{
 			display: block;
 			float: right;
-			margin-top: 8px;
-			margin-right: 20px;
+			margin-top: 7px;
+			margin-right: 25px;
 		}
 	}
 }
@@ -99,7 +99,7 @@ header{
 		nav{
 			margin: 0px;
 			padding: 0px;
-			background-color: rgba(0,0,0, 0.2);
+			background-color: rgba(0,0,0, 0.3);
 			width: 100%;
 			height: 50px; 
 			position: absolute;
@@ -133,7 +133,7 @@ header{
 	}
 }
 #bodyBg{
-	background-image: url('../img/fondo.jpg');
+	background-image: url('../img/sea-turtle-relaxation.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
