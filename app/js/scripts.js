@@ -24,7 +24,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('videoPrincipal', {
-    videoId: 'TUz750W2BYs', // esto es el id del video que se encuentra en la url
+    videoId: 'oBieQaGyKzQ', // esto es el id del video que se encuentra en la url
     playerVars: { 'autoplay': 0, 'controls': 1 ,'rel': 0, 'showinfo': 0 , 'controls': 2 , 'autohide' : 2},
     events: {
       'onReady': onPlayerReady,
@@ -32,7 +32,6 @@ function onYouTubeIframeAPIReady() {
     }
   });
 }
-
 // // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
 	video = event.target;
