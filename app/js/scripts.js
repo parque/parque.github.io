@@ -44,13 +44,18 @@ function onPlayerStateChange(event) {
 }
 ///////////////////////////////////////////////////////
 
+var sv = $('#seccionVideo');
+var title = $('.titleText');
+var btnDown = $("#divDown");
+var btnL = $('.btnChangeLeft');
+var btn = $('#btnChangeDown');
+
 function cambiarTexto(){
 	$('.textoCambiante').fadeToggle(200)
 }
 function aumentarVideo(){
 	var seccionV = $('#idSeccionVideo');
-	$('.btnLeftMov').addClass('hidden-xs');
-	$('.btnRightMov').addClass('hidden-xs');
+	hideButtonsAll();
 	seccionV.css("margin-top", "70px");
 	seccionV.removeClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	seccionV.addClass('col-xs-12 col-sm-7 col-sm-offset-1');
@@ -59,47 +64,41 @@ function aumentarVideo(){
 }
 function reducirVideo(){
 	var seccionV = $('#idSeccionVideo');
-	$('.btnLeftMov').removeClass('hidden-xs');
-	$('.btnRightMov').removeClass('hidden-xs');
 	seccionV.css("margin-top", "110px");
 	seccionV.removeClass('col-xs-12 col-sm-7 col-sm-offset-1');
 	seccionV.addClass('col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-3');
 	$('#bgDark').css('background-color', 'rgba(0,0,0,0.0)');
-	
+	if (sv.attr("storyState") == 'default') 
+		showButtonsAll();
+	if (sv.attr("storyState") == 'mario')
+		showButtonsLeft();
+	if (sv.attr("storyState") == 'homero')
+		showButtonsRight();
 }
 
 $('#btnChangeDown').click(function(){
-	var btn = $('#btnChangeDown');
-	var sv = $('#seccionVideo');
-	var title = $('.titleText');
 	var btnL = $('.btnLeft');
 	var btnLM = $('.btnLeftMov');
 	var btnR = $('.btnRight');
 	var btnRM = $('.btnRightMov');
-	
 	sv.addClass('animated fadeOutUp');
 	setTimeout(function(){
 		sv.removeClass('fadeOutUp');
 		// si esta en la historia de introduccion
 		if (btn.attr('story') == 'main'){
+			sv.attr("storyState", 'default');
 			video.loadVideoById('9edjOnavFE4');
 			btn.prev('h3').text('  Liberar a Romelia');
 			btn.attr('story', 'romelia');
 			title.text('Romelia la Tortuga');
-			btnL.removeClass('hide');
-			btnLM.removeClass('hide');
-			btnR.removeClass('hide');
-			btnRM.removeClass('hide');
 		} else{
 			if (btn.attr('story') == 'romelia') {
+				sv.attr("storyState", "none");
 				video.loadVideoById('YqqDQ-1_pBc');
 				btn.prev('h3').text(' Info');
 				btn.attr('story', 'liberar');
 				title.text('Liberación de Romelia');
-				btnL.addClass('hide');
-				btnLM.addClass('hide');
-				btnR.addClass('hide');
-				btnRM.addClass('hide');
+				hideButtonsAll();
 			} else {
 				if(btn.attr('story') == 'liberar'){
 					/// esta es la ultima seccion
@@ -111,49 +110,43 @@ $('#btnChangeDown').click(function(){
 				}
 			}
 		}
-		
 		sv.addClass('fadeInUp');
 	},500);
 });
 
 //TRANSICIÓN PARA LOS LADOS///////////////////////
 // derecha
-$('.btnChangeRight').click(function(){
-var btnR = $(this);
+
 var sv = $('#seccionVideo');
 var title = $('.titleText');
 var btnDown = $("#divDown");
+var btnL = $('.btnChangeLeft');
 
-	sv.removeClass('fadeOutLeft');
-	sv.removeClass('fadeInRight');
-	sv.removeClass('fadeInUp');
-	sv.removeClass('fadeInLeft');
-
+$('.btnChangeRight').click(function(){
+	var btnR = $('.btnChangeRight');
+	reseter();
+	sv.addClass('animated fadeOutLeft');
+	hideButtonsAll();
 
 	// si esta en la historia de introduccion
 	if (sv.attr("storyState") == 'default'){
-		sv.addClass('animated fadeOutLeft');
+		setTimeout(function(){
+			reseter();
 			title.text('Historia de Mario');
 			sv.attr("storyState", "mario");
-		setTimeout(function(){
 			btnDown.addClass("hide");
-			$('.btnRight').addClass('hide');
-			$('.btnRightMov').addClass('hide');
-			sv.removeClass('fadeOutLeft');
 			video.loadVideoById('9edjOnavFE4');
 			sv.addClass('fadeInRight');
 		},500);
-		/*$('.btnLeft').css('margin-top','67px');*/
 	} else {
 		if(sv.attr("storyState") == 'homero'){
 			setTimeout(function(){
-				title.text('Parque Marino Puntarenas');
+				reseter();
+				sv.addClass('fadeInRight');
+				title.text('Romelia la Tortuga');
 				sv.attr("storyState", "default");
-				$('.btnLeft').removeClass('hide');
-				$('.btnLeftMov').removeClass('hide');
 				btnDown.removeClass("hide");
 				video.loadVideoById('9edjOnavFE4');
-				sv.addClass('fadeInRight');
 			},500);
 		}
 	}
@@ -162,38 +155,71 @@ var btnDown = $("#divDown");
 
 // izquierda
 $('.btnChangeLeft').click(function(){
-var btnL = $(this);
-var sv = $('#seccionVideo');
-var title = $('.titleText');
-var btnDown = $("#divDown");
+	reseter();
+	sv.addClass('animated fadeOutRight');
+	hideButtonsAll();
 
-sv.addClass('animated fadeOutRight');
-sv.removeClass('fadeInRight');
-	setTimeout(function(){
-		sv.removeClass('fadeOutRight');
-		// si esta en la historia de homero
-		if (sv.attr("storyState") == 'mario'){
-			video.loadVideoById('9edjOnavFE4');
-			title.text('Parque Marino Puntarenas');
+	// si esta en la historia de homero
+	if (sv.attr("storyState") == 'mario'){
+		setTimeout(function(){
+			reseter();
 			sv.attr("storyState", "default");
-			$('.btnRight').removeClass('hide');
-			$('.btnRightMov').removeClass('hide');
-			btnDown.removeClass("hide");
+			sv.addClass('fadeInLeft');
+			title.text('Romelia la Tortuga');
+			video.loadVideoById('9edjOnavFE4');
+			btnDown.removeClass("hide");	
+		},500);
 			/*$('.btnLeft').css('margin-top','67px');*/
-		} else {
-			if(sv.attr("storyState")=='default'){
+	} else {
+		if(sv.attr("storyState")=='default'){
+			setTimeout(function(){
+				reseter();
+				sv.attr("storyState", "homero");
 				video.loadVideoById('9edjOnavFE4');
 				title.text('Historia de Homero');
-				sv.attr("storyState", "homero");
-				$('.btnLeft').addClass('hide');
-				$('.btnLeftMov').addClass('hide');
-				btnDown.addClass("hide");
-			}
-		} 
-		sv.addClass('fadeInLeft');
-	},500);
+				hideButtonsLeft();
+				sv.addClass('fadeInLeft');
+			},500);
+			btnDown.addClass("hide");
+		}
+	} 
 });
 
+////
+// funcion reseter
+function reseter(){
+	sv.removeClass('fadeOutLeft');
+	sv.removeClass('fadeOutLeft');
+	sv.removeClass('fadeInRight');
+	sv.removeClass('fadeInUp');
+	sv.removeClass('fadeInLeft');
+	sv.removeClass('fadeOutRight');
+}
+function hideButtonsRight(){
+	$('.btnRight').addClass('hide');
+	$('.btnRightMov').addClass('hide');
+}
+function showButtonsRight(){
+	$('.btnRight').removeClass('hide');
+	$('.btnRightMov').removeClass('hide');
+}
+function hideButtonsLeft(){
+	$('.btnLeft').addClass('hide');
+	$('.btnLeftMov').addClass('hide');
+}
+function showButtonsLeft(){
+	$('.btnLeft').removeClass('hide');
+	$('.btnLeftMov').removeClass('hide');
+}
+function hideButtonsAll(){
+	hideButtonsLeft();
+	hideButtonsRight();
+}
+function showButtonsAll(){
+	showButtonsLeft();
+	showButtonsRight();
+}
+////
 /////////////////////
 // Boton para moviles
 $('#menuBtn').click(function() {

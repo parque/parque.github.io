@@ -37,9 +37,43 @@ a {
 	}
 }
 #idSeccionVideo{
+	font-family: cantarell;
+	color: #fff;
 	z-index: 20;
 	padding-bottom: 100vh;
 	// transform: translate(0, 10vh);
+	.btnRight{
+		display: block;
+		position: absolute;
+		top: 14%;
+		right: -80%;
+		h4{
+			display: block;
+			float: left;
+		}
+		a{
+			display: block;
+			float: left;
+			margin-top: 8px;
+			margin-left: 20px;
+		}
+	}
+	.btnLeft{
+		display: block;
+		position: absolute;
+		top: 14%;
+		left: -87%;
+		h4{
+			display: block;
+			float: right;
+		}
+		a{
+			display: block;
+			float: right;
+			margin-top: 8px;
+			margin-right: 20px;
+		}
+	}
 }
 .mainRow,#bgDark{
 	-webkit-transition: 0.5s;
