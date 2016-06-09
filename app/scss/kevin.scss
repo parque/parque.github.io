@@ -50,38 +50,7 @@ html, body{
 		color: #fff;
 		font-size: 20px;
 	}
-	.btnRight{
-		display: block;
-		position: absolute;
-		top: 30%;
-		right: -80%;
-		h3{
-			display: block;
-			float: left;
-		}
-		a{
-			display: block;
-			float: left;
-			margin-top: 17px;
-			margin-left: 20px;
-		}
-	}
-	.btnLeft{
-		display: block;
-		position: absolute;
-		top: 30%;
-		left: -87%;
-		h3{
-			display: block;
-			float: right;
-		}
-		a{
-			display: block;
-			float: right;
-			margin-top: 17px;
-			margin-right: 20px;
-		}
-	}
+	
 }
 .btnRightMov{
 	display: block;
@@ -123,5 +92,66 @@ html, body{
 		background-color: rgba(0,0,0,0.5);
 		border-radius: 6px;
 		padding: 8px 10px;
+	}
+}
+.creditos{
+	display: block;
+	margin-top: 180px;
+	
+	.devs{
+		display: block;
+		position: relative;
+		width: 40%;
+		left: 20%;
+
+		h2{
+			text-align: center;
+			color: #fff;
+			font-family: cantarell;
+			letter-spacing: 1px;
+			padding-bottom: 40px;
+		}
+		h3{
+			text-align: center;
+			color: #fff;
+			font-family: cantarell;
+			letter-spacing: 1px;
+			padding-bottom: 40px;
+		}
+		.cont-img{
+			display: block;
+
+			img{
+				width: 90px;
+				height: 90px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 680px){
+	.devs{
+		left: 10%!important;
+		width: 70%!important;
+	}
+	.cont-img{
+
+		img{
+			width: 70px!important;
+			height: 70px!important;
+		}
+	}
+}
+@media screen and (max-width: 480px) {
+	.devs{
+		left: 0!important;
+		width: 100%!important;
+	}
+	.cont-img{
+
+		img{
+			width: 70px!important;
+			height: 70px!important;
+		}
 	}
 }

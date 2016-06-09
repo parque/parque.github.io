@@ -61,44 +61,6 @@ html, body {
   font-size: 20px;
 }
 
-#seccionVideo .btnRight {
-  display: block;
-  position: absolute;
-  top: 30%;
-  right: -80%;
-}
-
-#seccionVideo .btnRight h3 {
-  display: block;
-  float: left;
-}
-
-#seccionVideo .btnRight a {
-  display: block;
-  float: left;
-  margin-top: 17px;
-  margin-left: 20px;
-}
-
-#seccionVideo .btnLeft {
-  display: block;
-  position: absolute;
-  top: 30%;
-  left: -87%;
-}
-
-#seccionVideo .btnLeft h3 {
-  display: block;
-  float: right;
-}
-
-#seccionVideo .btnLeft a {
-  display: block;
-  float: right;
-  margin-top: 17px;
-  margin-right: 20px;
-}
-
 .btnRightMov {
   display: block;
   position: absolute;
@@ -145,4 +107,63 @@ html, body {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 6px;
   padding: 8px 10px;
+}
+
+.creditos {
+  display: block;
+  margin-top: 180px;
+}
+
+.creditos .devs {
+  display: block;
+  position: relative;
+  width: 40%;
+  left: 20%;
+}
+
+.creditos .devs h2 {
+  text-align: center;
+  color: #fff;
+  font-family: cantarell;
+  letter-spacing: 1px;
+  padding-bottom: 40px;
+}
+
+.creditos .devs h3 {
+  text-align: center;
+  color: #fff;
+  font-family: cantarell;
+  letter-spacing: 1px;
+  padding-bottom: 40px;
+}
+
+.creditos .devs .cont-img {
+  display: block;
+}
+
+.creditos .devs .cont-img img {
+  width: 90px;
+  height: 90px;
+}
+
+@media screen and (max-width: 680px) {
+  .devs {
+    left: 10% !important;
+    width: 70% !important;
+  }
+  .cont-img img {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .devs {
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .cont-img img {
+    width: 70px !important;
+    height: 70px !important;
+  }
 }
