@@ -306,3 +306,17 @@ $(document).ready(function(){
 	  $('.btnRightMov').removeClass('hidden-xs');
 	});
 });
+
+
+///////////////////////////////////////////////
+/// Logica del texto 
+setInterval(function(){
+	var time = video.getCurrentTime();
+	console.log(time);
+
+	if(btn.attr('story') == "main"){
+
+	} elseif() {
+		//otro video
+	}
+},1000);
