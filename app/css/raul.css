@@ -12,14 +12,17 @@
   padding-top: 7%;
   height: 100vh;
   margin-bottom: 0;
+  vertical-align: center;
 }
 
 #seccionTexto p {
   color: #ffffff;
   font-family: Cantarell;
   text-align: center;
-  font-size: 1em;
+  font-size: 1.6em;
+  line-height: 2em;
   font-weight: lighter;
+  vertical-align: center;
 }
 
 #btnTexto {
