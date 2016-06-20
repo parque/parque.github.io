@@ -317,6 +317,6 @@ setInterval(function(){
 	if(btn.attr('story') == "main"){
 
 	} else if(true) {
-		//otro video
+		// otro video
 	}
 },1000);
