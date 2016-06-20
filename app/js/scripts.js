@@ -322,6 +322,11 @@ setInterval(function(){
 		textVideo1(time);
 	} else if(true) {
 		// otro video
+	} 
+	if(sv.attr("storyState") == 'homero'){
+		textVideoHomero(time);
+	} else if(true){
+
 	}
 },1000);
 
@@ -340,12 +345,50 @@ function textVideo1(time){
 			textV.text('El Parque practica y promueve valores como: equidad, solidaridad, responsabilidad, trabajo en equipo, eficiencia, trabajo comunal y búsqueda del equilibrio de los ecosistemas.');
 			textV.fadeIn(1500);
 		},3000);
-	} else if (time > 150 && time < 200 && newT == true){
+	} else if (time > 150 && time < 170 && newT == true){
 		newT = false;
 		textV.fadeOut(1500);
 		setTimeout(function(){
 			textV.text('Desde el año 2005, el programa ha venido mejorando la tecnología de reproducción y alevinaje del Pargo Manchado, especie de alto interés comercial con un excelente mercado en los Estados Unidos.');
 			textV.fadeIn(1500);
 		},3000);
-	} 
-}
+	} else if(time > 170 && time < 210 && newT ==false){
+		newT = true;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('El Programa de Educación Ambiental del Parque Marino, facilita para todo público, charlas cortas formativas sobre temas relevantes, tanto del ámbito marino, como sobre tópicos socio-ambientales.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 210 && time < 225 && newT == true){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('El Parque Marino considera primordial el mejoramiento de la calidad de vida de los pobladores de la zona costera...');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 225 && time < 240 && newT == false){
+		newT = true;
+		textV.fadeOut(800);
+		setTimeout(function(){
+			textV.text('por lo que promueve un área aplicada a crear alternativas por medio de la investigación, el desarrollo y la innovación, en el campo de la producción marina.');
+			textV.fadeIn(800);
+		},3000);
+	} else if(time > 240 && time < 270 && newT == true){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('El Parque Marino es el ente de referencia en Puntarenas en cuanto a la conservación de recursos marinos.');
+			textV.fadeIn(1500);
+		},3000);
+	}
+};
+function textVideoHomero(time){
+	if(time > 5 && time < 100 && newT){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Hola Homero, Doh!');
+			textV.fadeIn(1500);
+		},3000);
+	}
+};
