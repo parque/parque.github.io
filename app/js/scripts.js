@@ -310,13 +310,42 @@ $(document).ready(function(){
 
 ///////////////////////////////////////////////
 /// Logica del texto 
+var newT = true;
+var textV = $('.textoCambiante');
+textV.addClass('animated');
+
 setInterval(function(){
 	var time = video.getCurrentTime();
 	console.log(time);
 
 	if(btn.attr('story') == "main"){
-
+		textVideo1(time);
 	} else if(true) {
 		//otro video
 	}
 },1000);
+
+function textVideo1(time){
+	if(time > 65 && time < 100 && newT){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('El Parque Marino del Pacífico es una organización interdisciplinaria e interinstitucional que promueve, apoya y difunde la investigación, la educación y el uso sostenible de la biodiversidad marina. Es además un centro para la recreación.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 100 && time < 150 && newT == false){
+		newT = true;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('El Parque practica y promueve valores como: equidad, solidaridad, responsabilidad, trabajo en equipo, eficiencia, trabajo comunal y búsqueda del equilibrio de los ecosistemas.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if (time > 150 && time < 200 && newT == true){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Desde el año 2005, el programa ha venido mejorando la tecnología de reproducción y alevinaje del Pargo Manchado, especie de alto interés comercial con un excelente mercado en los Estados Unidos.');
+			textV.fadeIn(1500);
+		},3000);
+	} 
+}
