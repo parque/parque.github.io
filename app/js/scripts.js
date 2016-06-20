@@ -383,11 +383,11 @@ function textVideo1(time){
 	}
 };
 function textVideoHomero(time){
-	if(time > 5 && time < 100 && newT){
+	if(time > 0.5 && time < 100 && newT){
 		newT = false;
 		textV.fadeOut(1500);
 		setTimeout(function(){
-			textV.text('Hola Homero, Doh!');
+			textV.text('Los pelícanos en exhibición fueron encontrados principalmente en distintas playas con sus alas fracturadas, lo cual hace imposible que vuelvan a volar.');
 			textV.fadeIn(1500);
 		},3000);
 	}
