@@ -383,11 +383,46 @@ function textVideo1(time){
 	}
 };
 function textVideoHomero(time){
-	if(time > 0.5 && time < 100 && newT){
+	if(time > 0.5 && time < 65 && newT){
 		newT = false;
 		textV.fadeOut(1500);
 		setTimeout(function(){
 			textV.text('Los pelícanos en exhibición fueron encontrados principalmente en distintas playas con sus alas fracturadas, lo cual hace imposible que vuelvan a volar.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 65 && time < 100 && newT == false){
+		newT = true;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Homero es el pelícano con más años en el Parque Marino.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 100 && time < 118 && newT){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Los pelícanos no tienen la capacidad de recuperarse de fracturas en sus huesos.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 118 && time < 156 && newT == false){
+		newT = true;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Los pelícanos se alimentan de pescados pequeños. El Parque Marino se encargan del alimento que ellos necesitan y los cuidados necesarios.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 156 && time < 222 && newT){
+		newT = false;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Los pelícanos son un ejemplo del esfuerzo que realiza el Parque por brindar apoyo a los animales costeros.');
+			textV.fadeIn(1500);
+		},3000);
+	} else if(time > 222 && time < 444 && newT == false){
+		newT = true;
+		textV.fadeOut(1500);
+		setTimeout(function(){
+			textV.text('Por medio de las historias de los pelícanos se hace conciencia en los jóvenes y niños para que respeten la fauna costera.');
 			textV.fadeIn(1500);
 		},3000);
 	}
