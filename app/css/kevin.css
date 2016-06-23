@@ -137,6 +137,21 @@ html, body {
   padding-bottom: 40px;
 }
 
+.creditos .devs p {
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+  padding-top: 25px;
+}
+
+.creditos .devs h4 {
+  text-align: center;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 1px;
+}
+
 .creditos .devs .cont-img {
   display: block;
 }
