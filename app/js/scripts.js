@@ -95,7 +95,7 @@ $('#btnChangeDown').click(function(){
 		// si esta en la historia de introduccion
 		if (btn.attr('story') == 'main'){
 			sv.attr("storyState", 'default');
-			btn.prev('h3').text(' Que pasó con Romelia?');
+			btn.prev('h3').text('Qué pasó con Romelia?');
 			btn.attr('story', 'romelia');
 			title.text('Romelia la Tortuga');
 			video.loadVideoById('ke05PJnoedA');
@@ -365,7 +365,7 @@ function type(texto){
 }
 
 function textVideo1(time){
-	if(time > 8 && time < 100 && newT){
+	if(time > 65 && time < 100 && newT){
 		newT = false;
 		ctrlV = 0;
 		type(textoMain1);
