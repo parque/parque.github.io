@@ -335,11 +335,14 @@ var textoMain2 = "El Parque practica y promueve valores como: equidad, solidarid
 
 function type(texto){
 	console.log("type");
-	textV.text(texto);
-	$(textV).typed({
+	textV.empty();
+	textV.html('<p id="TC" style="font-size: 1em;"></p>');
+
+	$('#TC').typed({
 	    strings: [texto],
 	    typeSpeed: 50,
-	    showCursor: false
+	    showCursor: false,
+	    contentType: 'text',
 	});
 }
 
@@ -348,15 +351,15 @@ function textVideo1(time){
 		newT = false;
 		textV.fadeOut(1500);
 		setTimeout(function(){
-			type(textoMain1);
 			textV.fadeIn(1500);
+			type(textoMain1);
 		},3000);
 	} else if(time > 100 && time < 150 && newT == false){
 		newT = true;
 		textV.fadeOut(1500);
 		setTimeout(function(){
-			type(textoMain2);
 			textV.fadeIn(1500);
+			type(textoMain2);
 		},3000);
 	} else if (time > 150 && time < 170 && newT == true){
 		newT = false;
