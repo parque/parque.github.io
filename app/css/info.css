@@ -1,0 +1,3 @@
+.mainRow, #seccionTexto {
+  overflow-x: scroll !important;
+}
