@@ -311,6 +311,7 @@ $(document).ready(function(){
 ///////////////////////////////////////////////
 /// Logica del texto 
 var newT = true;
+var ctrlV;
 var textV = $('.textoCambiante');
 textV.addClass('animated');
 
@@ -329,117 +330,88 @@ setInterval(function(){
 
 	}
 },1000);
-
+// textos primer video
 var textoMain1 = "El Parque Marino del Pacífico es una organización interdisciplinaria e interinstitucional que promueve, apoya y difunde la investigación, la educación y el uso sostenible de la biodiversidad marina. Es además un centro para la recreación.";
 var textoMain2 = "El Parque practica y promueve valores como: equidad, solidaridad, responsabilidad, trabajo en equipo, eficiencia, trabajo comunal y búsqueda del equilibrio de los ecosistemas.";
+var textoMain3 = "Desde el año 2005, el programa ha venido mejorando la tecnología de reproducción y alevinaje del Pargo Manchado, especie de alto interés comercial con un excelente mercado en los Estados Unidos.";
+var textoMain4 = "El Programa de Educación Ambiental del Parque Marino, facilita para todo público, charlas cortas formativas sobre temas relevantes, tanto del ámbito marino, como sobre tópicos socio-ambientales.";
+var textoMain5 = "El Parque Marino considera primordial el mejoramiento de la calidad de vida de los pobladores de la zona costera...";
+var textoMain6 = "por lo que promueve un área aplicada a crear alternativas por medio de la investigación, el desarrollo y la innovación, en el campo de la producción marina.";
+var textoMain7 = "El Parque Marino es el ente de referencia en Puntarenas en cuanto a la conservación de recursos marinos.";
+
+// textos Homero
+var textoHomer1 = "Los pelícanos en exhibición fueron encontrados principalmente en distintas playas con sus alas fracturadas, lo cual hace imposible que vuelvan a volar.";
+var textoHomer2 = "Homero es el pelícano con más años en el Parque Marino.";
+var textoHomer3 = "Los pelícanos no tienen la capacidad de recuperarse de fracturas en sus huesos.";
+var textoHomer4 = "Los pelícanos se alimentan de pescados pequeños. El Parque Marino se encarga del alimento que ellos necesitan y los cuidados necesarios.";
+var textoHomer5 = "Los pelícanos son un ejemplo del esfuerzo que realiza el Parque por brindar apoyo a los animales costeros.";
+var textoHomer6 = "Por medio de las historias de los pelícanos se hace conciencia en los jóvenes y niños para que respeten la fauna costera.";
 
 function type(texto){
 	console.log("type");
-	textV.empty();
-	textV.html('<p id="TC" style="font-size: 1em;"></p>');
-
-	$('#TC').typed({
-	    strings: [texto],
-	    typeSpeed: 50,
-	    showCursor: false,
-	    contentType: 'text',
-	});
+	textV.fadeOut(1500);
+	setTimeout(function(){
+		textV.empty();
+		textV.html('<p id="TC" style="font-size: 1em;"></p>');
+	
+		textV.fadeIn(1500);
+		$('#TC').typed({
+		    strings: [texto],
+		    typeSpeed: 30,
+		    showCursor: false,
+		    contentType: 'text',
+		});
+	},3000);
 }
 
 function textVideo1(time){
 	if(time > 8 && time < 100 && newT){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.fadeIn(1500);
-			type(textoMain1);
-		},3000);
+		ctrlV = 0;
+		type(textoMain1);
 	} else if(time > 100 && time < 150 && newT == false){
 		newT = true;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.fadeIn(1500);
-			type(textoMain2);
-		},3000);
+		type(textoMain2);
 	} else if (time > 150 && time < 170 && newT == true){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Desde el año 2005, el programa ha venido mejorando la tecnología de reproducción y alevinaje del Pargo Manchado, especie de alto interés comercial con un excelente mercado en los Estados Unidos.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoMain3);
 	} else if(time > 170 && time < 210 && newT ==false){
 		newT = true;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('El Programa de Educación Ambiental del Parque Marino, facilita para todo público, charlas cortas formativas sobre temas relevantes, tanto del ámbito marino, como sobre tópicos socio-ambientales.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoMain4);
 	} else if(time > 210 && time < 225 && newT == true){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('El Parque Marino considera primordial el mejoramiento de la calidad de vida de los pobladores de la zona costera...');
-			textV.fadeIn(1500);
-		},3000);
-	} else if(time > 225 && time < 240 && newT == false){
+		type(textoMain5);
+	} else if(time > 225 && time < 245 && newT == false){
 		newT = true;
-		textV.fadeOut(800);
-		setTimeout(function(){
-			textV.text('por lo que promueve un área aplicada a crear alternativas por medio de la investigación, el desarrollo y la innovación, en el campo de la producción marina.');
-			textV.fadeIn(800);
-		},3000);
-	} else if(time > 240 && time < 270 && newT == true){
+		type(textoMain6);
+	} else if(time > 245 && time < 262 && newT == true){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('El Parque Marino es el ente de referencia en Puntarenas en cuanto a la conservación de recursos marinos.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoMain7);
 	}
 };
+// TEXTOS HOMERO
 function textVideoHomero(time){
-	if(time > 0.5 && time < 65 && newT){
+	if(ctrlV == 0){
+		newT = true;
+		ctrlV = 1;
+	}
+	if(time > 1 && time < 65 && newT){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Los pelícanos en exhibición fueron encontrados principalmente en distintas playas con sus alas fracturadas, lo cual hace imposible que vuelvan a volar.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoHomer1);
 	} else if(time > 65 && time < 100 && newT == false){
 		newT = true;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Homero es el pelícano con más años en el Parque Marino.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoHomer2);
 	} else if(time > 100 && time < 118 && newT){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Los pelícanos no tienen la capacidad de recuperarse de fracturas en sus huesos.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoHomer3);
 	} else if(time > 118 && time < 156 && newT == false){
 		newT = true;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Los pelícanos se alimentan de pescados pequeños. El Parque Marino se encargan del alimento que ellos necesitan y los cuidados necesarios.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoHomer4);
 	} else if(time > 156 && time < 222 && newT){
 		newT = false;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Los pelícanos son un ejemplo del esfuerzo que realiza el Parque por brindar apoyo a los animales costeros.');
-			textV.fadeIn(1500);
-		},3000);
-	} else if(time > 222 && time < 444 && newT == false){
+		type(textoHomer5);
+	} else if(time > 222 && time < 328 && newT == false){
 		newT = true;
-		textV.fadeOut(1500);
-		setTimeout(function(){
-			textV.text('Por medio de las historias de los pelícanos se hace conciencia en los jóvenes y niños para que respeten la fauna costera.');
-			textV.fadeIn(1500);
-		},3000);
+		type(textoHomer6);
 	}
 };
