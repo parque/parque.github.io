@@ -330,19 +330,32 @@ setInterval(function(){
 	}
 },1000);
 
+var textoMain1 = "El Parque Marino del Pacífico es una organización interdisciplinaria e interinstitucional que promueve, apoya y difunde la investigación, la educación y el uso sostenible de la biodiversidad marina. Es además un centro para la recreación.";
+var textoMain2 = "El Parque practica y promueve valores como: equidad, solidaridad, responsabilidad, trabajo en equipo, eficiencia, trabajo comunal y búsqueda del equilibrio de los ecosistemas.";
+
+function type(texto){
+	console.log("type");
+	textV.text(texto);
+	$(textV).typed({
+	    strings: [texto],
+	    typeSpeed: 50,
+	    showCursor: false
+	});
+}
+
 function textVideo1(time){
-	if(time > 65 && time < 100 && newT){
+	if(time > 8 && time < 100 && newT){
 		newT = false;
 		textV.fadeOut(1500);
 		setTimeout(function(){
-			textV.text('El Parque Marino del Pacífico es una organización interdisciplinaria e interinstitucional que promueve, apoya y difunde la investigación, la educación y el uso sostenible de la biodiversidad marina. Es además un centro para la recreación.');
+			type(textoMain1);
 			textV.fadeIn(1500);
 		},3000);
 	} else if(time > 100 && time < 150 && newT == false){
 		newT = true;
 		textV.fadeOut(1500);
 		setTimeout(function(){
-			textV.text('El Parque practica y promueve valores como: equidad, solidaridad, responsabilidad, trabajo en equipo, eficiencia, trabajo comunal y búsqueda del equilibrio de los ecosistemas.');
+			type(textoMain2);
 			textV.fadeIn(1500);
 		},3000);
 	} else if (time > 150 && time < 170 && newT == true){
