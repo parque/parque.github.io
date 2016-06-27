@@ -1,32 +1,27 @@
 @font-face {
   font-family: Cantarell;
-  src: url(../fonts/Cantarell.tff);
-}
+  src: url(../fonts/Cantarell.tff); }
 
 #seccionTexto {
-  -webkit-display: flex;
-  -moz-display: flex;
-  display: flex;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   padding-right: 3.5%;
   padding-left: 3.5%;
   height: 100vh;
   margin-bottom: 0;
-  vertical-align: center;
-}
-
-#seccionTexto p {
-  color: #ffffff;
-  font-family: Cantarell;
-  text-align: center;
-  font-size: 1.5em;
-  line-height: 1.8em;
-  font-weight: lighter;
-  vertical-align: center;
-  margin-top: -10%;
-}
+  vertical-align: center; }
+  #seccionTexto section {
+    position: relative;
+    top: 20%; }
+    #seccionTexto section p {
+      color: #ffffff;
+      font-family: Cantarell;
+      text-align: center;
+      font-size: 1.5em;
+      line-height: 1.8em;
+      font-weight: lighter;
+      vertical-align: center;
+      margin-top: -10%; }
 
 #btnTexto {
   height: 100px;
@@ -34,21 +29,16 @@
   position: absolute;
   top: 50px;
   left: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.5) 49%, rgba(255, 255, 255, 0) 50%);
-}
-
-#btnTexto button {
-  border: none;
-  background: none;
-  outline: none;
-  color: white;
-  height: 50px;
-  width: 50px;
-}
-
-#btnTexto button:active {
-  color: gray;
-}
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 10%, rgba(0, 0, 0, 0.5) 49%, rgba(255, 255, 255, 0) 50%); }
+  #btnTexto button {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    height: 50px;
+    width: 50px; }
+    #btnTexto button:active {
+      color: gray; }
 
 #btnTxtClose {
   height: 100px;
@@ -57,21 +47,16 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0) 49%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.5) 10%);
-  display: none;
-}
-
-#btnTxtClose button {
-  border: none;
-  background: none;
-  outline: none;
-  color: white;
-  height: 50px;
-  width: 50px;
-  position: inherit;
-  bottom: 0;
-  right: 0;
-}
-
-#btnTxtClose button:active {
-  color: gray;
-}
+  display: none; }
+  #btnTxtClose button {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    height: 50px;
+    width: 50px;
+    position: inherit;
+    bottom: 0;
+    right: 0; }
+    #btnTxtClose button:active {
+      color: gray; }
