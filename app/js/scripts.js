@@ -98,7 +98,7 @@ $('#btnChangeDown').click(function(){
 			btn.prev('h3').text('Qué pasó con Romelia?');
 			btn.attr('story', 'romelia');
 			title.text('Romelia la Tortuga');
-			video.loadVideoById('ke05PJnoedA');
+			video.loadVideoById('nm8sF21HkxQ');
 		} else{
 			if (btn.attr('story') == 'romelia') {
 				sv.attr("storyState", "none");
@@ -165,7 +165,7 @@ $('.btnChangeRight').click(function(){
 				btnDown.removeClass("hide");
 				$('.btnRight h4').text('Historia Mario');
 				$('.btnRightMov h5').text('Historia Mario');
-				video.loadVideoById('ke05PJnoedA');
+				video.loadVideoById('nm8sF21HkxQ');
 
 			},500);
 		}
@@ -190,7 +190,7 @@ $('.btnChangeLeft').click(function(){
 			$('.btnLeft h4').text('Historia Homero');
 			$('.btnLeftMov h5').text('Historia Homero')
 			btnDown.removeClass("hide");	
-			video.loadVideoById('ke05PJnoedA');
+			video.loadVideoById('nm8sF21HkxQ');
 		},500);
 	} else {
 		if(sv.attr("storyState")=='default'){
@@ -202,7 +202,7 @@ $('.btnChangeLeft').click(function(){
 				$('.btnRight h4').text('Historia Romelia');
 				$('.btnRightMov h5').text('Historia Romelia');
 				sv.addClass('fadeInLeft');
-				video.loadVideoById('p1o2w8-wofI');
+				video.loadVideoById('KfzCrv3ZLJs');
 			},500);
 			btnDown.addClass("hide");
 		}
@@ -212,6 +212,7 @@ $('.btnChangeLeft').click(function(){
 // funcion reseter
 var ctrlH;
 var ctrlM;
+var ctrlRP;
 
 function reseter(){
 	sv.removeClass('fadeOutLeft');
@@ -346,6 +347,11 @@ setInterval(function(){
 	} else if(true){
 
 	}
+	if(btn.attr('story') == 'romelia'){
+		textoRomeliaP(time);
+	}else if(true){
+
+	}
 },1000);
 // textos primer video
 var textoMain1 = "El Parque Marino del Pacífico es una organización interdisciplinaria e interinstitucional que promueve, apoya y difunde la investigación, la educación y el uso sostenible de la biodiversidad marina. Es además un centro para la recreación.";
@@ -376,6 +382,13 @@ var textoLR2 = "La liberación se realizó con presencia de alumnos de escuelas 
 var textoLR3 = "El rostro de la tortuga se cubre para que ella tenga la menor interacción con los humanos.";
 var textoLR4 = "Aunque para Romelia moverse en la arena es difícil en el agua se desenvuelve muy bien.";
 
+// textos Romelia Principal video
+var textoR1 = "Romelia es un ejemplo de que con el esfuerzo de personas interesadas en la conservación se puede generar conciencia en las personas.";
+var textoR2 = "Romelia fue trasladada al Parque Marino para que fuera allí en donde se realizará el proceso de recuperación.";
+var textoR3 = "Así como otros animales que han ingresado al Parque Marino Romelia estaba gravemente herida.";
+var textoR4 = "El caso de las tortugas que sufren accidentes provocados por humanos no es aislado, esto sucede porque los pescadores casan el alimento que ellas consumen.";
+
+
 function type(texto){
 	console.log("type");
 	textV.fadeOut(1500);
@@ -394,6 +407,8 @@ function type(texto){
 }
 
 function textVideo1(time){
+	ctrlLR = 0;
+	//ctrlRP = 0;
 	if(time > 65 && time < 100 && newT){
 		newT = false;
 		type(textoMain1);
@@ -419,6 +434,8 @@ function textVideo1(time){
 };
 // TEXTOS HOMERO
 function textVideoHomero(time){
+	ctrlLR = 0;
+	//ctrlRP = 0;
 	if(ctrlH == 0){
 		newT = true;
 		ctrlH = 1;
@@ -445,6 +462,8 @@ function textVideoHomero(time){
 };
 // TEXTOS MARIO
 function textVideoMario(time){
+	ctrlLR = 0;
+	//ctrlRP = 0;
 	if(ctrlM == 0){
 		newT = true;
 		ctrlM = 1;
@@ -463,6 +482,27 @@ function textVideoMario(time){
 		type(textoMario4);
 	}
 };
+//TEXTOS ROMELIA PRINCIPAL VIDEO
+function textoRomeliaP(time){
+	if(ctrlRP == 0){
+		newT = true;
+		ctrlRP = 1;
+	}
+	if(time > 1 && time < 90 && newT){
+		newT = false;
+		type(textoR1);
+	} else if(time > 90 && time < 260 && newT == false){
+		newT = true;
+		type(textoR2);
+	} else if(time > 260 && time < 320 && newT){
+		newT = false;
+		type(textoR3);
+	} else if(time > 320 && time < 410 && newT == false){
+		newT = true;
+		type(textoR4);
+	}
+};
+//TEXTOS ROMELIA LIBERACIÓN
 function textLiberacionRomelia(time){
 	if(ctrlLR == 0){
 		newT = true;
