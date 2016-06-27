@@ -4,10 +4,6 @@
 }
 
 #seccionTexto {
-  -webkit-display: flex;
-  -moz-display: flex;
-  display: flex;
-  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   padding-right: 3.5%;
@@ -17,7 +13,12 @@
   vertical-align: center;
 }
 
-#seccionTexto p {
+#seccionTexto section {
+  position: relative;
+  top: 20%;
+}
+
+#seccionTexto section p {
   color: #ffffff;
   font-family: Cantarell;
   text-align: center;
