@@ -83,7 +83,7 @@ function reducirVideo(){
 	if (sv.attr("storyState") == 'homero')
 		showButtonsRight();
 }
-
+var ctrlLR;
 $('#btnChangeDown').click(function(){
 	var btnL = $('.btnLeft');
 	var btnLM = $('.btnLeftMov');
@@ -110,6 +110,7 @@ $('#btnChangeDown').click(function(){
 			} else {
 				if(btn.attr('story') == 'liberar'){
 					/// esta es la ultima seccion
+					
 					video.destroy();
 					btn.prev('h3').text(' Final');
 					btn.children('i').removeClass('fa fa-chevron-down');
@@ -211,6 +212,7 @@ $('.btnChangeLeft').click(function(){
 // funcion reseter
 var ctrlH;
 var ctrlM;
+
 function reseter(){
 	sv.removeClass('fadeOutLeft');
 	sv.removeClass('fadeOutLeft');
@@ -339,6 +341,11 @@ setInterval(function(){
 	} else if(true){
 
 	}
+	if(btn.attr('story') == 'liberar'){
+		textLiberacionRomelia(time);
+	} else if(true){
+
+	}
 },1000);
 // textos primer video
 var textoMain1 = "El Parque Marino del Pacífico es una organización interdisciplinaria e interinstitucional que promueve, apoya y difunde la investigación, la educación y el uso sostenible de la biodiversidad marina. Es además un centro para la recreación.";
@@ -362,6 +369,12 @@ var textoMario1 = "Mario es una tortuga lora que se encuentra de manera permanen
 var textoMario2 = "Las tortugas marinas bajo ninguna circunstancia pueden estar encerradas como mascotas.";
 var textoMario3 = "Mario es uno de los casos más extraños ya que debido a su condición previa no sabía nadar.";
 var textoMario4 = "Aunque Mario es una tortuga saludable sus hábitos y poca noción del exterior no le permitirán salir del acuario.";
+
+// textos de liberación de Romelia
+var textoLR1 = "La Historia de Romelia ha sido conocida a nivel nacional como una representación del esfuerzo del Parque Marino por la conservación de la vida marina.";
+var textoLR2 = "La liberación se realizó con presencia de alumnos de escuelas y kinders.";
+var textoLR3 = "El rostro de la tortuga se cubre para que ella tenga la menor interacción con los humanos.";
+var textoLR4 = "Aunque para Romelia moverse en la arena es difícil en el agua se desenvuelve muy bien.";
 
 function type(texto){
 	console.log("type");
@@ -448,5 +461,24 @@ function textVideoMario(time){
 	} else if(time > 200 && time < 212 && newT == false){
 		newT = true;
 		type(textoMario4);
+	}
+};
+function textLiberacionRomelia(time){
+	if(ctrlLR == 0){
+		newT = true;
+		ctrlLR = 1;
+	}
+	if(time > 1 && time < 98 && newT){
+		newT = false;
+		type(textoLR1);
+	} else if(time > 98 && time < 285 && newT == false){
+		newT = true;
+		type(textoLR2);
+	} else if(time > 285 && time < 347 && newT){
+		newT = false;
+		type(textoLR3);
+	} else if(time > 347 && time < 600 && newT == false){
+		newT = true;
+		type(textoLR4);
 	}
 };
