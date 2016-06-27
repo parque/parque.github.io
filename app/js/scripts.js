@@ -98,7 +98,7 @@ $('#btnChangeDown').click(function(){
 			btn.prev('h3').text('Qué pasó con Romelia?');
 			btn.attr('story', 'romelia');
 			title.text('Romelia la Tortuga');
-			video.loadVideoById('cB6MEfZA6GU');
+			video.loadVideoById('ke05PJnoedA');
 		} else{
 			if (btn.attr('story') == 'romelia') {
 				sv.attr("storyState", "none");
@@ -151,7 +151,8 @@ $('.btnChangeRight').click(function(){
 			$('.btnLeft h4').text('Historia Romelia');
 			$('.btnLeftMov h5').text('Historia Romelia');
 			sv.addClass('fadeInRight');
-			video.loadVideoById('ke05PJnoedA');
+			video.loadVideoById('cB6MEfZA6GU');
+			
 		},500);
 	} else {
 		if(sv.attr("storyState") == 'homero'){
@@ -208,6 +209,8 @@ $('.btnChangeLeft').click(function(){
 });
 ////
 // funcion reseter
+var ctrlH;
+var ctrlM;
 function reseter(){
 	sv.removeClass('fadeOutLeft');
 	sv.removeClass('fadeOutLeft');
@@ -215,6 +218,8 @@ function reseter(){
 	sv.removeClass('fadeInUp');
 	sv.removeClass('fadeInLeft');
 	sv.removeClass('fadeOutRight');
+	ctrlH = 0;
+	ctrlM = 0;
 }
 function hideButtonsRight(){
 	$('.btnRight').addClass('hide');
@@ -311,7 +316,7 @@ $(document).ready(function(){
 ///////////////////////////////////////////////
 /// Logica del texto 
 var newT = true;
-var ctrlV;
+
 var textV = $('.textoCambiante');
 textV.addClass('animated');
 
@@ -326,6 +331,11 @@ setInterval(function(){
 	} 
 	if(sv.attr("storyState") == 'homero'){
 		textVideoHomero(time);
+	} else if(true){
+
+	}
+	if(sv.attr("storyState") == 'mario'){
+		textVideoMario(time);
 	} else if(true){
 
 	}
@@ -347,6 +357,12 @@ var textoHomer4 = "Los pelícanos se alimentan de pescados pequeños. El Parque 
 var textoHomer5 = "Los pelícanos son un ejemplo del esfuerzo que realiza el Parque por brindar apoyo a los animales costeros.";
 var textoHomer6 = "Por medio de las historias de los pelícanos se hace conciencia en los jóvenes y niños para que respeten la fauna costera.";
 
+// textos de Mario
+var textoMario1 = "Mario es una tortuga lora que se encuentra de manera permanente en exhibición en el Parque Marino.";
+var textoMario2 = "Las tortugas marinas bajo ninguna circunstancia pueden estar encerradas como mascotas.";
+var textoMario3 = "Mario es uno de los casos más extraños ya que debido a su condición previa no sabía nadar.";
+var textoMario4 = "Aunque Mario es una tortuga saludable sus hábitos y poca noción del exterior no le permitirán salir del acuario.";
+
 function type(texto){
 	console.log("type");
 	textV.fadeOut(1500);
@@ -367,7 +383,6 @@ function type(texto){
 function textVideo1(time){
 	if(time > 65 && time < 100 && newT){
 		newT = false;
-		ctrlV = 0;
 		type(textoMain1);
 	} else if(time > 100 && time < 150 && newT == false){
 		newT = true;
@@ -391,9 +406,9 @@ function textVideo1(time){
 };
 // TEXTOS HOMERO
 function textVideoHomero(time){
-	if(ctrlV == 0){
+	if(ctrlH == 0){
 		newT = true;
-		ctrlV = 1;
+		ctrlH = 1;
 	}
 	if(time > 1 && time < 65 && newT){
 		newT = false;
@@ -413,5 +428,25 @@ function textVideoHomero(time){
 	} else if(time > 222 && time < 328 && newT == false){
 		newT = true;
 		type(textoHomer6);
+	}
+};
+// TEXTOS MARIO
+function textVideoMario(time){
+	if(ctrlM == 0){
+		newT = true;
+		ctrlM = 1;
+	}
+	if(time > 1 && time < 45 && newT){
+		newT = false;
+		type(textoMario1);
+	} else if(time > 45 && time < 94 && newT == false){
+		newT = true;
+		type(textoMario2);
+	} else if(time > 94 && time < 200 && newT){
+		newT = false;
+		type(textoMario3);
+	} else if(time > 200 && time < 212 && newT == false){
+		newT = true;
+		type(textoMario4);
 	}
 };
