@@ -16,12 +16,15 @@
 }
 
 #seccionTexto{
+  -webkit-display: flex;
+  -moz-display: flex;
+  display: flex;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-  margin-top: 50px;
+  // padding-top: 50px;
   box-sizing: border-box;
   padding-right: 3.5%;
   padding-left: 3.5%;
-  padding-top: 5%;
   height: 100vh;
   margin-bottom: 0;
   vertical-align: center;
@@ -33,6 +36,7 @@
     line-height: 1.8em;
     font-weight: lighter;
     vertical-align: center;
+    margin-top: -40%;
   }
 }
 
