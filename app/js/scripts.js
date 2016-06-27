@@ -106,7 +106,7 @@ $('#btnChangeDown').click(function(){
 				btn.attr('story', 'liberar');
 				title.text('Liberación de Romelia');
 				hideButtonsAll();
-				video.loadVideoById('ke05PJnoedA');
+				video.loadVideoById('9yXTU73NoOE');
 			} else {
 				if(btn.attr('story') == 'liberar'){
 					/// esta es la ultima seccion
