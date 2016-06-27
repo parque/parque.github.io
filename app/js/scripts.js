@@ -23,7 +23,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 var player;
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('videoPrincipal', {
-    videoId: '2CuLLqV_byM', // esto es el id del video que se encuentra en la url
+    videoId: '6hzoDFriH9U', // esto es el id del video que se encuentra en la url
     playerVars: { 'autoplay': 0, 'controls': 1 ,'rel': 0, 'showinfo': 0, 'autohide' : 2},
     events: {
       'onReady': onPlayerReady,
