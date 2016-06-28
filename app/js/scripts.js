@@ -223,6 +223,7 @@ function reseter(){
 	sv.removeClass('fadeOutRight');
 	ctrlH = 0;
 	ctrlM = 0;
+	ctrlRP = 0;
 }
 function hideButtonsRight(){
 	$('.btnRight').addClass('hide');
@@ -325,7 +326,7 @@ textV.addClass('animated');
 
 setInterval(function(){
 	var time = video.getCurrentTime();
-	console.log(time);
+	// console.log(time);
 
 	if(btn.attr('story') == "main"){
 		textVideo1(time);
@@ -347,9 +348,9 @@ setInterval(function(){
 	} else if(true){
 
 	}
-	if(btn.attr('story') == 'romelia'){
+	if(sv.attr('storyState') == 'default'){
 		textoRomeliaP(time);
-	}else if(true){
+	} else if(true){
 
 	}
 },1000);
@@ -383,14 +384,14 @@ var textoLR3 = "El rostro de la tortuga se cubre para que ella tenga la menor in
 var textoLR4 = "Aunque para Romelia moverse en la arena es difícil en el agua se desenvuelve muy bien.";
 
 // textos Romelia Principal video
-var textoR1 = "Romelia es un ejemplo de que con el esfuerzo de personas interesadas en la conservación se puede generar conciencia en las personas.";
-var textoR2 = "Romelia fue trasladada al Parque Marino para que fuera allí en donde se realizará el proceso de recuperación.";
-var textoR3 = "Así como otros animales que han ingresado al Parque Marino Romelia estaba gravemente herida.";
+var textoR1 = "Romelia es un ejemplo de que con el esfuerzo de personas interesadas en la conservación se puede generar consciencia en las personas.";
+var textoR2 = "Romelia fue trasladada al Parque Marino para que fuera ahí en donde se realizara el proceso de recuperación.";
+var textoR3 = "Así como otros animales que han ingresado al Parque Marino, Romelia estaba gravemente herida.";
 var textoR4 = "El caso de las tortugas que sufren accidentes provocados por humanos no es aislado, esto sucede porque los pescadores casan el alimento que ellas consumen.";
 
 
 function type(texto){
-	console.log("type");
+	// console.log("type");
 	textV.fadeOut(1500);
 	setTimeout(function(){
 		textV.empty();
@@ -408,7 +409,7 @@ function type(texto){
 
 function textVideo1(time){
 	ctrlLR = 0;
-	//ctrlRP = 0;
+	ctrlRP = 0;
 	if(time > 65 && time < 100 && newT){
 		newT = false;
 		type(textoMain1);
@@ -435,7 +436,7 @@ function textVideo1(time){
 // TEXTOS HOMERO
 function textVideoHomero(time){
 	ctrlLR = 0;
-	//ctrlRP = 0;
+	
 	if(ctrlH == 0){
 		newT = true;
 		ctrlH = 1;
@@ -463,7 +464,7 @@ function textVideoHomero(time){
 // TEXTOS MARIO
 function textVideoMario(time){
 	ctrlLR = 0;
-	//ctrlRP = 0;
+	
 	if(ctrlM == 0){
 		newT = true;
 		ctrlM = 1;
