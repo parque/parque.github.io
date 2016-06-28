@@ -1,73 +1,99 @@
 @font-face {
   font-family: cantarell;
-  src: url("../fonts/Cantarell-Regular.ttf"); }
+  src: url("../fonts/Cantarell-Regular.ttf");
+}
 
 a {
   cursor: pointer;
-  color: #D1D1D1; }
-  a:hover {
-    color: #fff; }
+  color: #D1D1D1;
+}
+
+a:hover {
+  color: #fff;
+}
 
 #menuBtn {
   position: absolute;
   right: 20px;
-  top: 10px; }
+  top: 10px;
+}
 
 .menuOpenUl {
   top: 50px;
   position: absolute;
   background-color: #26203D;
   margin: 0px;
-  padding: 0px; }
-  .menuOpenUl li {
-    float: none !important;
-    margin: 0px;
-    padding: 0px; }
-  .menuOpenUl a {
-    text-align: center;
-    display: block;
-    width: 100%;
-    margin: auto 0px; }
-    .menuOpenUl a i {
-      text-align: center;
-      width: 100%; }
+  padding: 0px;
+}
+
+.menuOpenUl li {
+  float: none !important;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menuOpenUl a {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin: auto 0px;
+}
+
+.menuOpenUl a i {
+  text-align: center;
+  width: 100%;
+}
 
 #idSeccionVideo {
   font-family: cantarell;
   color: #fff;
   z-index: 20;
-  padding-bottom: 100vh; }
-  #idSeccionVideo .btnRight {
-    display: block;
-    position: absolute;
-    top: 14%;
-    right: -80%; }
-    #idSeccionVideo .btnRight h4 {
-      display: block;
-      float: left; }
-    #idSeccionVideo .btnRight a {
-      display: block;
-      float: left;
-      margin-top: 7px;
-      margin-left: 25px; }
-  #idSeccionVideo .btnLeft {
-    display: block;
-    position: absolute;
-    top: 14%;
-    left: -87%; }
-    #idSeccionVideo .btnLeft h4 {
-      display: block;
-      float: right; }
-    #idSeccionVideo .btnLeft a {
-      display: block;
-      float: right;
-      margin-top: 7px;
-      margin-right: 25px; }
+  padding-bottom: 100vh;
+}
+
+#idSeccionVideo .btnRight {
+  display: block;
+  position: absolute;
+  top: 14%;
+  right: -80%;
+}
+
+#idSeccionVideo .btnRight h4 {
+  display: block;
+  float: left;
+}
+
+#idSeccionVideo .btnRight a {
+  display: block;
+  float: left;
+  margin-top: 7px;
+  margin-left: 25px;
+}
+
+#idSeccionVideo .btnLeft {
+  display: block;
+  position: absolute;
+  top: 14%;
+  left: -87%;
+}
+
+#idSeccionVideo .btnLeft h4 {
+  display: block;
+  float: right;
+}
+
+#idSeccionVideo .btnLeft a {
+  display: block;
+  float: right;
+  margin-top: 7px;
+  margin-right: 25px;
+}
 
 .mainRow, #bgDark {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 #bgDark {
   position: absolute;
@@ -77,12 +103,14 @@ a {
   height: 100%;
   z-index: -5;
   top: 0px;
-  left: 0px; }
+  left: 0px;
+}
 
 #idSeccionVideo {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
-  transition: 0.5s; }
+  transition: 0.5s;
+}
 
 header nav {
   margin: 0px;
@@ -91,29 +119,38 @@ header nav {
   width: 100%;
   height: 50px;
   position: absolute;
-  z-index: 30; }
-  header nav ul {
-    width: 100%;
-    -webkit-transition: 0.7s;
-    -moz-transition: 0.7s;
-    transition: 0.7s; }
-    header nav ul li {
-      display: inline;
-      font-family: cantarell; }
-      header nav ul li a {
-        float: right;
-        display: inline-block;
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 15px;
-        margin-left: 3%;
-        margin-right: 3%; }
-        header nav ul li a:hover {
-          text-decoration: none;
-          color: #fff;
-          -webkit-transition: 0.2s;
-          -moz-transition: 0.2s;
-          transition: 0.2s; }
+  z-index: 30;
+}
+
+header nav ul {
+  width: 100%;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  transition: 0.7s;
+}
+
+header nav ul li {
+  display: inline;
+  font-family: cantarell;
+}
+
+header nav ul li a {
+  float: right;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 15px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+header nav ul li a:hover {
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  transition: 0.2s;
+}
 
 #bodyBg {
   background-image: url("../img/f1.png");
@@ -126,4 +163,5 @@ header nav {
   z-index: -10;
   -webkit-filter: brightness(70%);
   /* Chrome, Safari, Opera */
-  filter: brightness(70%); }
+  filter: brightness(70%);
+}
